@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gorillazle — Discography</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #12121a;
+      --surface: #1a1a26;
+      --border: #2a2a3a;
+      --text: #e0e0f0;
+      --muted: #555570;
+      --green: #4caf6e;
+      --yellow: #c9a227;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      width: 100%;
+      background: #0e0e16;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 0.12em; color: #fff; }
+
+    .nav-btn {
+      background: none;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-btn:hover { color: #fff; border-color: #555; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      text-align: center;
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+
+    .page-header p {
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* ── GRID ── */
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ── CARD ── */
+    .album-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .album-header {
+      padding: 1rem 1.25rem;
+      background: #161620;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .album-cover {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .album-header-text { flex: 1; }
+
+    .album-number {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .album-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .album-meta {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      align-items: center;
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      border-radius: 5px;
+      padding: 2px 7px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .badge.mixtape { border-color: #5a3e1b; color: #c87941; }
+    .badge.ep      { border-color: #1b3a5a; color: #4192c8; }
+    .badge.studio  { border-color: #1b3a28; color: #41c873; }
+
+    /* ── TRACK TABLE ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    thead th {
+      padding: 0.55rem 1rem;
+      text-align: left;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--border);
+    }
+    thead th:first-child { width: 32px; }
+    thead th:last-child  { text-align: right; }
+
+    tbody tr {
+      border-bottom: 1px solid #1e1e2e;
+      transition: background 0.1s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #1e1e2e; }
+
+    td {
+      padding: 0.6rem 1rem;
+      vertical-align: middle;
+    }
+
+    td.track-num {
+      color: var(--muted);
+      font-size: 0.78rem;
+      width: 32px;
+    }
+
+    td.track-name { color: var(--text); font-weight: 500; }
+
+    td.duration {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    td.streams {
+      text-align: right;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .streams-bar-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    .streams-bar {
+      height: 3px;
+      border-radius: 2px;
+      background: var(--green);
+      opacity: 0.55;
+      min-width: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">GORILLAZLE</span>
+  <a class="nav-btn" href="gorillaz.html">&larr; Back to Game</a>
+</nav>
+
+<div class="page-header">
+  <h1>GORILLAZ</h1>
+  <p>Complete Discography &mdash; see all tracks</p>
+</div>
+
+<div class="albums" id="albums"></div>
+
+<script>
+const COVERS = {}; // fallback mapping (unused, JSON contains cover URLs)
+
+let data;
+fetch('gorrilaz_db.json')
+  .then(r => r.json())
+  .then(j => {
+    data = j.albums;
+    start();
+  });
+
+function start() {
+  let globalMax = 0;
+  for (const album of Object.values(data)) {
+    for (const t of Object.values(album.tracks)) {
+      if (t.spotify_streams_approx > globalMax) globalMax = t.spotify_streams_approx;
+    }
+  }
+
+  const typeClass = { "Mixtape": "mixtape", "EP": "ep", "Studio Album": "studio" };
+  const container = document.getElementById('albums');
+  const sorted = Object.entries(data).sort((a, b) => a[1].album_number - b[1].album_number);
+
+  for (const [name, album] of sorted) {
+    const tracksSorted = Object.entries(album.tracks).sort((a, b) => a[1].track_number - b[1].track_number);
+    const year = album.release_date.slice(0, 4);
+
+    const rows = tracksSorted.map(([title, t]) => {
+      const barWidth = Math.round((t.spotify_streams_approx / globalMax) * 80);
+      return `
+        <tr>
+          <td class="track-num">${t.track_number}</td>
+          <td class="track-name">${title}</td>
+          <td class="duration">${t.duration}</td>
+          <td class="streams">
+            <div class="streams-bar-wrap">
+              <span>${formatStreams(t.spotify_streams_approx)}</span>
+              <div class="streams-bar" style="width:${barWidth}px"></div>
+            </div>
+          </td>
+        </tr>`;
+    }).join('');
+
+    const card = document.createElement('div');
+    card.className = 'album-card';
+    card.innerHTML = `
+      <div class="album-header">
+        <img class="album-cover" src="${album.cover_img_spotify_300 || ''}" alt="${name}">
+        <div class="album-header-text">
+          <div class="album-number">Album ${album.album_number}</div>
+          <div class="album-name">${name}</div>
+          <div class="album-meta">
+            <span class="badge ${typeClass[album.type] || ''}">${album.type}</span>
+            <span>${year}</span>
+            <span>${tracksSorted.length} tracks</span>
+          </div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Time</th>
+            <th style="text-align:right">Streams</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+    container.appendChild(card);
+  }
+}
+
+function formatStreams(n) {
+  if (n >= 1e9) return (n / 1e9).toFixed(2) + 'B';
+  if (n >= 1e6) return Math.round(n / 1e6) + 'M';
+  return n.toLocaleString();
+}
+</script>
+</body>
+</html>
+
+
+

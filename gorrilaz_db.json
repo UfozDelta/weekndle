@@ -1,0 +1,1156 @@
+{
+  "metadata": {
+    "description": "Gorillaz Complete Discography - All album tracks (including interludes) with game-relevant data",
+    "notes": {
+      "albums_included": "Gorillaz, Demon Days, Plastic Beach, The Fall, Humanz, The Now Now, Song Machine Season One: Strange Timez, Cracker Island, The Mountain",
+      "album_order": "Chronological order (1-9)",
+      "deluxe_tracks": "No deluxe/bonus tracks included - standard editions only",
+      "streams_source": "Spotify (approximate, as of early 2026 via kworb.net)",
+      "duration_format": "M:SS",
+      "duration_seconds": "Total duration in seconds for comparison (game uses ±30 seconds for yellow)",
+      "interludes_included": true
+    },
+    "game_rules": {
+      "guesses_allowed": 8,
+      "green": "Exact match in any column",
+      "album_yellow": "Correct song is within ±2 albums in the discography",
+      "track_number_yellow": "Correct song is within ±2 tracks in the album",
+      "duration_yellow": "Correct song is within ±30 seconds in length",
+      "streams": "Only shows more or less (no yellow option)"
+    }
+  },
+  "albums": {
+    "Gorillaz": {
+      "album_number": 1,
+      "release_date": "2001-03-26",
+      "type": "Studio Album",
+      "total_tracks": 15,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e02c73a7bb15f43bae86215934b",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b273c73a7bb15f43bae86215934b",
+      "cover_img_local": "images/01_gorillaz.jpg",
+      "spotify_url": "https://open.spotify.com/album/0YvYmLBFFwYxgI4U9KKgUm",
+      "tracks": {
+        "Re-Hash": {
+          "track_number": 1,
+          "duration": "3:39",
+          "duration_seconds": 219,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 30900000
+        },
+        "5/4": {
+          "track_number": 2,
+          "duration": "2:41",
+          "duration_seconds": 161,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 51600000
+        },
+        "Tomorrow Comes Today": {
+          "track_number": 3,
+          "duration": "3:15",
+          "duration_seconds": 195,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 105000000
+        },
+        "New Genious (Brother)": {
+          "track_number": 4,
+          "duration": "3:54",
+          "duration_seconds": 234,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 17500000
+        },
+        "Clint Eastwood": {
+          "track_number": 5,
+          "duration": "5:41",
+          "duration_seconds": 341,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 1104000000
+        },
+        "Man Research (Clapper)": {
+          "track_number": 6,
+          "duration": "4:33",
+          "duration_seconds": 273,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 16700000
+        },
+        "Punk": {
+          "track_number": 7,
+          "duration": "1:34",
+          "duration_seconds": 94,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 19900000
+        },
+        "Sound Check (Gravity)": {
+          "track_number": 8,
+          "duration": "5:36",
+          "duration_seconds": 336,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 21000000
+        },
+        "Double Bass": {
+          "track_number": 9,
+          "duration": "5:23",
+          "duration_seconds": 323,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 17500000
+        },
+        "Rock the House": {
+          "track_number": 10,
+          "duration": "4:09",
+          "duration_seconds": 249,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 73900000
+        },
+        "19-2000": {
+          "track_number": 11,
+          "duration": "3:29",
+          "duration_seconds": 209,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 210400000
+        },
+        "Latin Simone (Qué Pasa Contigo)": {
+          "track_number": 12,
+          "duration": "3:37",
+          "duration_seconds": 217,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 25900000
+        },
+        "Starshine": {
+          "track_number": 13,
+          "duration": "3:33",
+          "duration_seconds": 213,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 22500000
+        },
+        "Slow Country": {
+          "track_number": 14,
+          "duration": "3:36",
+          "duration_seconds": 216,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 16500000
+        },
+        "M1 A1": {
+          "track_number": 15,
+          "duration": "7:11",
+          "duration_seconds": 431,
+          "album": "Gorillaz",
+          "album_number": 1,
+          "spotify_streams_approx": 16200000
+        }
+      }
+    },
+    "Demon Days": {
+      "album_number": 2,
+      "release_date": "2005-05-23",
+      "type": "Studio Album",
+      "total_tracks": 15,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e02622aefd794f6fe4d8e714358",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b273622aefd794f6fe4d8e714358",
+      "cover_img_local": "images/02_demon_days.jpg",
+      "spotify_url": "https://open.spotify.com/album/0bUTHlWbkSQysoM3VsWldT",
+      "tracks": {
+        "Intro": {
+          "track_number": 1,
+          "duration": "1:03",
+          "duration_seconds": 63,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 20800000
+        },
+        "Last Living Souls": {
+          "track_number": 2,
+          "duration": "3:10",
+          "duration_seconds": 190,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 52100000
+        },
+        "Kids with Guns": {
+          "track_number": 3,
+          "duration": "3:47",
+          "duration_seconds": 227,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 194800000
+        },
+        "O Green World": {
+          "track_number": 4,
+          "duration": "4:32",
+          "duration_seconds": 272,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 105000000
+        },
+        "Dirty Harry": {
+          "track_number": 5,
+          "duration": "3:44",
+          "duration_seconds": 224,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 365600000
+        },
+        "Feel Good Inc.": {
+          "track_number": 6,
+          "duration": "3:41",
+          "duration_seconds": 221,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 2186000000
+        },
+        "El Mañana": {
+          "track_number": 7,
+          "duration": "3:50",
+          "duration_seconds": 230,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 140200000
+        },
+        "Every Planet We Reach Is Dead": {
+          "track_number": 8,
+          "duration": "4:52",
+          "duration_seconds": 292,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 55500000
+        },
+        "November Has Come": {
+          "track_number": 9,
+          "duration": "2:48",
+          "duration_seconds": 168,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 105100000
+        },
+        "All Alone": {
+          "track_number": 10,
+          "duration": "3:30",
+          "duration_seconds": 210,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 57600000
+        },
+        "White Light": {
+          "track_number": 11,
+          "duration": "2:05",
+          "duration_seconds": 125,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 30300000
+        },
+        "DARE": {
+          "track_number": 12,
+          "duration": "4:04",
+          "duration_seconds": 244,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 703400000
+        },
+        "Fire Coming out of the Monkey's Head": {
+          "track_number": 13,
+          "duration": "3:18",
+          "duration_seconds": 198,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 45000000
+        },
+        "Don't Get Lost in Heaven": {
+          "track_number": 14,
+          "duration": "1:54",
+          "duration_seconds": 114,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 30800000
+        },
+        "Demon Days": {
+          "track_number": 15,
+          "duration": "4:27",
+          "duration_seconds": 267,
+          "album": "Demon Days",
+          "album_number": 2,
+          "spotify_streams_approx": 35700000
+        }
+      }
+    },
+    "Plastic Beach": {
+      "album_number": 3,
+      "release_date": "2010-03-03",
+      "type": "Studio Album",
+      "total_tracks": 16,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e02661d019f34569f79eae9e985",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b273661d019f34569f79eae9e985",
+      "cover_img_local": "images/03_plastic_beach.jpg",
+      "spotify_url": "https://open.spotify.com/album/2dIGnmEIy1WZIcZCFSj6i8",
+      "tracks": {
+        "Orchestral Intro": {
+          "track_number": 1,
+          "duration": "1:15",
+          "duration_seconds": 75,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 19500000
+        },
+        "Welcome to the World of the Plastic Beach": {
+          "track_number": 2,
+          "duration": "3:35",
+          "duration_seconds": 215,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 36500000
+        },
+        "White Flag": {
+          "track_number": 3,
+          "duration": "4:30",
+          "duration_seconds": 270,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 25600000
+        },
+        "Rhinestone Eyes": {
+          "track_number": 4,
+          "duration": "3:19",
+          "duration_seconds": 199,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 629500000
+        },
+        "Stylo": {
+          "track_number": 5,
+          "duration": "4:24",
+          "duration_seconds": 264,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 152600000
+        },
+        "Superfast Jellyfish": {
+          "track_number": 6,
+          "duration": "2:54",
+          "duration_seconds": 174,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 79500000
+        },
+        "Empire Ants": {
+          "track_number": 7,
+          "duration": "4:42",
+          "duration_seconds": 282,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 201300000
+        },
+        "Glitter Freeze": {
+          "track_number": 8,
+          "duration": "4:00",
+          "duration_seconds": 240,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 26300000
+        },
+        "Some Kind of Nature": {
+          "track_number": 9,
+          "duration": "3:08",
+          "duration_seconds": 188,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 40400000
+        },
+        "On Melancholy Hill": {
+          "track_number": 10,
+          "duration": "3:54",
+          "duration_seconds": 234,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 939400000
+        },
+        "Broken": {
+          "track_number": 11,
+          "duration": "3:19",
+          "duration_seconds": 199,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 63000000
+        },
+        "Sweepstakes": {
+          "track_number": 12,
+          "duration": "5:00",
+          "duration_seconds": 300,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 18700000
+        },
+        "Plastic Beach": {
+          "track_number": 13,
+          "duration": "3:48",
+          "duration_seconds": 228,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 130600000
+        },
+        "To Binge": {
+          "track_number": 14,
+          "duration": "3:17",
+          "duration_seconds": 197,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 46000000
+        },
+        "Cloud of Unknowing": {
+          "track_number": 15,
+          "duration": "3:07",
+          "duration_seconds": 187,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 17200000
+        },
+        "Pirate Jet": {
+          "track_number": 16,
+          "duration": "2:31",
+          "duration_seconds": 151,
+          "album": "Plastic Beach",
+          "album_number": 3,
+          "spotify_streams_approx": 26100000
+        }
+      }
+    },
+    "The Fall": {
+      "album_number": 4,
+      "release_date": "2010-12-25",
+      "type": "Studio Album",
+      "total_tracks": 15,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e02bfcb1c9ce002a2c2cd5e9f34",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b273b7dd5e5a6a3752a67ec98906",
+      "cover_img_local": "images/04_the_fall.jpg",
+      "spotify_url": "https://open.spotify.com/album/4tUxQkrduOE8sfgwJ5BI2F",
+      "tracks": {
+        "Phoner to Arizona": {
+          "track_number": 1,
+          "duration": "2:50",
+          "duration_seconds": 170,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 4200000
+        },
+        "Revolving Doors": {
+          "track_number": 2,
+          "duration": "4:08",
+          "duration_seconds": 248,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 29000000
+        },
+        "HillBilly Man": {
+          "track_number": 3,
+          "duration": "4:35",
+          "duration_seconds": 275,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 10200000
+        },
+        "Detroit": {
+          "track_number": 4,
+          "duration": "4:25",
+          "duration_seconds": 265,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 17000000
+        },
+        "Shy-Town": {
+          "track_number": 5,
+          "duration": "1:11",
+          "duration_seconds": 71,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 3300000
+        },
+        "Little Pink Plastic Bags": {
+          "track_number": 6,
+          "duration": "5:01",
+          "duration_seconds": 301,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 6100000
+        },
+        "The Joplin Spider": {
+          "track_number": 7,
+          "duration": "3:25",
+          "duration_seconds": 205,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 4200000
+        },
+        "The Parish of Space Dust": {
+          "track_number": 8,
+          "duration": "2:38",
+          "duration_seconds": 158,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 4500000
+        },
+        "The Snake in Dallas": {
+          "track_number": 9,
+          "duration": "2:04",
+          "duration_seconds": 124,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 3800000
+        },
+        "Amarillo": {
+          "track_number": 10,
+          "duration": "5:25",
+          "duration_seconds": 325,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 11700000
+        },
+        "The Speak It Mountains": {
+          "track_number": 11,
+          "duration": "4:06",
+          "duration_seconds": 246,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 3000000
+        },
+        "Aspen Forest": {
+          "track_number": 12,
+          "duration": "3:17",
+          "duration_seconds": 197,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 3200000
+        },
+        "Bobby in Phoenix": {
+          "track_number": 13,
+          "duration": "3:30",
+          "duration_seconds": 210,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 8600000
+        },
+        "California and the Slipping of the Sun": {
+          "track_number": 14,
+          "duration": "2:47",
+          "duration_seconds": 167,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 3500000
+        },
+        "Seattle Yodel": {
+          "track_number": 15,
+          "duration": "0:44",
+          "duration_seconds": 44,
+          "album": "The Fall",
+          "album_number": 4,
+          "spotify_streams_approx": 2400000
+        }
+      }
+    },
+    "Humanz": {
+      "album_number": 5,
+      "release_date": "2017-04-28",
+      "type": "Studio Album",
+      "total_tracks": 20,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e029a0d4fc558f2337ee5b3a5c2",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b2739a0d4fc558f2337ee5b3a5c2",
+      "cover_img_local": "images/05_humanz.jpg",
+      "spotify_url": "https://open.spotify.com/album/0696xC5ne3egtnSXp6T4Yg",
+      "tracks": {
+        "Intro: I Switched My Robot Off": {
+          "track_number": 1,
+          "duration": "0:36",
+          "duration_seconds": 36,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 8900000
+        },
+        "Ascension": {
+          "track_number": 2,
+          "duration": "2:22",
+          "duration_seconds": 142,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 99800000
+        },
+        "Strobelite": {
+          "track_number": 3,
+          "duration": "3:27",
+          "duration_seconds": 207,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 64100000
+        },
+        "Saturnz Barz": {
+          "track_number": 4,
+          "duration": "3:59",
+          "duration_seconds": 239,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 183100000
+        },
+        "Momentz": {
+          "track_number": 5,
+          "duration": "2:40",
+          "duration_seconds": 160,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 45600000
+        },
+        "Interlude: The Non-Conformist Oath": {
+          "track_number": 6,
+          "duration": "0:22",
+          "duration_seconds": 22,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 5500000
+        },
+        "Submission": {
+          "track_number": 7,
+          "duration": "4:28",
+          "duration_seconds": 268,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 32200000
+        },
+        "Charger": {
+          "track_number": 8,
+          "duration": "2:38",
+          "duration_seconds": 158,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 35000000
+        },
+        "Interlude: Elevator Going Up": {
+          "track_number": 9,
+          "duration": "0:12",
+          "duration_seconds": 12,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 4800000
+        },
+        "Andromeda": {
+          "track_number": 10,
+          "duration": "3:17",
+          "duration_seconds": 197,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 176100000
+        },
+        "Busted and Blue": {
+          "track_number": 11,
+          "duration": "2:54",
+          "duration_seconds": 174,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 51300000
+        },
+        "Interlude: Talk Radio": {
+          "track_number": 12,
+          "duration": "0:26",
+          "duration_seconds": 26,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 4200000
+        },
+        "Carnival": {
+          "track_number": 13,
+          "duration": "3:31",
+          "duration_seconds": 211,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 19600000
+        },
+        "Let Me Out": {
+          "track_number": 14,
+          "duration": "4:02",
+          "duration_seconds": 242,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 51500000
+        },
+        "Interlude: Penthouse": {
+          "track_number": 15,
+          "duration": "0:13",
+          "duration_seconds": 13,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 3800000
+        },
+        "Sex Murder Party": {
+          "track_number": 16,
+          "duration": "3:18",
+          "duration_seconds": 198,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 15800000
+        },
+        "She's My Collar": {
+          "track_number": 17,
+          "duration": "3:20",
+          "duration_seconds": 200,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 387100000
+        },
+        "Hallelujah Money": {
+          "track_number": 18,
+          "duration": "4:41",
+          "duration_seconds": 281,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 16100000
+        },
+        "We Got the Power": {
+          "track_number": 19,
+          "duration": "2:42",
+          "duration_seconds": 162,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 38800000
+        },
+        "Interlude: New World": {
+          "track_number": 20,
+          "duration": "0:33",
+          "duration_seconds": 33,
+          "album": "Humanz",
+          "album_number": 5,
+          "spotify_streams_approx": 8900000
+        }
+      }
+    },
+    "The Now Now": {
+      "album_number": 6,
+      "release_date": "2018-06-29",
+      "type": "Studio Album",
+      "total_tracks": 11,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e024d9f7b88e82db31d13ac6668",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b273e74e86b8854b62a8ec6422fe",
+      "cover_img_local": "images/06_the_now_now.jpg",
+      "spotify_url": "https://open.spotify.com/album/5gZbNMjBMmkaJarusQgyYy",
+      "tracks": {
+        "Humility": {
+          "track_number": 1,
+          "duration": "3:17",
+          "duration_seconds": 197,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 158400000
+        },
+        "Tranz": {
+          "track_number": 2,
+          "duration": "2:52",
+          "duration_seconds": 172,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 142100000
+        },
+        "Hollywood": {
+          "track_number": 3,
+          "duration": "4:11",
+          "duration_seconds": 251,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 47700000
+        },
+        "Kansas": {
+          "track_number": 4,
+          "duration": "4:08",
+          "duration_seconds": 248,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 45600000
+        },
+        "Sorcererz": {
+          "track_number": 5,
+          "duration": "3:50",
+          "duration_seconds": 230,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 30700000
+        },
+        "Idaho": {
+          "track_number": 6,
+          "duration": "4:02",
+          "duration_seconds": 242,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 18100000
+        },
+        "Lake Zurich": {
+          "track_number": 7,
+          "duration": "5:04",
+          "duration_seconds": 304,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 33900000
+        },
+        "Magic City": {
+          "track_number": 8,
+          "duration": "3:32",
+          "duration_seconds": 212,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 39200000
+        },
+        "Fire Flies": {
+          "track_number": 9,
+          "duration": "3:17",
+          "duration_seconds": 197,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 43600000
+        },
+        "One Percent": {
+          "track_number": 10,
+          "duration": "3:00",
+          "duration_seconds": 180,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 15400000
+        },
+        "Souk Eye": {
+          "track_number": 11,
+          "duration": "5:14",
+          "duration_seconds": 314,
+          "album": "The Now Now",
+          "album_number": 6,
+          "spotify_streams_approx": 60300000
+        }
+      }
+    },
+    "Song Machine, Season One: Strange Timez": {
+      "album_number": 7,
+      "release_date": "2020-10-23",
+      "type": "Studio Album",
+      "total_tracks": 11,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e0226229a2e7eba1f3a2aad9e40",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b273b07c37fd514514e541b92052",
+      "cover_img_local": "images/07_song_machine.jpg",
+      "spotify_url": "https://open.spotify.com/album/5I9K0u8r57VBMITxnMCxxR",
+      "tracks": {
+        "Strange Timez": {
+          "track_number": 1,
+          "duration": "3:39",
+          "duration_seconds": 219,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 22200000
+        },
+        "The Valley of The Pagans": {
+          "track_number": 2,
+          "duration": "4:16",
+          "duration_seconds": 256,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 50800000
+        },
+        "The Lost Chord": {
+          "track_number": 3,
+          "duration": "4:19",
+          "duration_seconds": 259,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 22800000
+        },
+        "Pac-Man": {
+          "track_number": 4,
+          "duration": "3:53",
+          "duration_seconds": 233,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 65600000
+        },
+        "Chalk Tablet Towers": {
+          "track_number": 5,
+          "duration": "3:20",
+          "duration_seconds": 200,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 15500000
+        },
+        "The Pink Phantom": {
+          "track_number": 6,
+          "duration": "5:17",
+          "duration_seconds": 317,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 43600000
+        },
+        "Aries": {
+          "track_number": 7,
+          "duration": "3:12",
+          "duration_seconds": 192,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 54200000
+        },
+        "Friday 13th": {
+          "track_number": 8,
+          "duration": "3:49",
+          "duration_seconds": 229,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 20700000
+        },
+        "Dead Butterflies": {
+          "track_number": 9,
+          "duration": "5:04",
+          "duration_seconds": 304,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 11600000
+        },
+        "Désolé": {
+          "track_number": 10,
+          "duration": "4:31",
+          "duration_seconds": 271,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 34900000
+        },
+        "Momentary Bliss": {
+          "track_number": 11,
+          "duration": "3:29",
+          "duration_seconds": 209,
+          "album": "Song Machine, Season One: Strange Timez",
+          "album_number": 7,
+          "spotify_streams_approx": 74600000
+        }
+      }
+    },
+    "Cracker Island": {
+      "album_number": 8,
+      "release_date": "2023-02-24",
+      "type": "Studio Album",
+      "total_tracks": 10,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e0219707804f73dc50f7a29cd86",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b2734e2e3e39e1813438dde54e1d",
+      "cover_img_local": "images/08_cracker_island.jpg",
+      "spotify_url": "https://open.spotify.com/album/3IWBmBMSZVEBPdqMAtdzP9",
+      "tracks": {
+        "Cracker Island": {
+          "track_number": 1,
+          "duration": "3:41",
+          "duration_seconds": 221,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 138200000
+        },
+        "Oil": {
+          "track_number": 2,
+          "duration": "4:00",
+          "duration_seconds": 240,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 40300000
+        },
+        "The Tired Influencer": {
+          "track_number": 3,
+          "duration": "2:38",
+          "duration_seconds": 158,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 17200000
+        },
+        "Tarantula": {
+          "track_number": 4,
+          "duration": "3:18",
+          "duration_seconds": 198,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 19800000
+        },
+        "Silent Running": {
+          "track_number": 5,
+          "duration": "4:08",
+          "duration_seconds": 248,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 62200000
+        },
+        "New Gold": {
+          "track_number": 6,
+          "duration": "3:30",
+          "duration_seconds": 210,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 257500000
+        },
+        "Baby Queen": {
+          "track_number": 7,
+          "duration": "3:35",
+          "duration_seconds": 215,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 55200000
+        },
+        "Tormenta": {
+          "track_number": 8,
+          "duration": "3:42",
+          "duration_seconds": 222,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 255300000
+        },
+        "Skinny Ape": {
+          "track_number": 9,
+          "duration": "4:16",
+          "duration_seconds": 256,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 26100000
+        },
+        "Possession Island": {
+          "track_number": 10,
+          "duration": "4:17",
+          "duration_seconds": 257,
+          "album": "Cracker Island",
+          "album_number": 8,
+          "spotify_streams_approx": 12200000
+        }
+      }
+    },
+    "The Mountain": {
+      "album_number": 9,
+      "release_date": "2026-02-27",
+      "type": "Studio Album",
+      "total_tracks": 15,
+      "cover_img_spotify_300": "https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4",
+      "cover_img_spotify_640": "https://i.scdn.co/image/ab67616d0000b273eeb01b41f48210d032d1b6a4",
+      "cover_img_local": "images/09_the_mountain.jpg",
+      "spotify_url": "https://open.spotify.com/album/1RvJmGd47lKS4XMXs9j8hD",
+      "tracks": {
+        "The Mountain": {
+          "track_number": 1,
+          "duration": "5:14",
+          "duration_seconds": 314,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 5200000
+        },
+        "The Moon Cave": {
+          "track_number": 2,
+          "duration": "5:30",
+          "duration_seconds": 330,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 3800000
+        },
+        "The Happy Dictator": {
+          "track_number": 3,
+          "duration": "3:48",
+          "duration_seconds": 228,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 16600000
+        },
+        "The Hardest Thing": {
+          "track_number": 4,
+          "duration": "4:34",
+          "duration_seconds": 274,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 5000000
+        },
+        "Orange County": {
+          "track_number": 5,
+          "duration": "3:57",
+          "duration_seconds": 237,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 4500000
+        },
+        "The God of Lying": {
+          "track_number": 6,
+          "duration": "4:23",
+          "duration_seconds": 263,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 6000000
+        },
+        "The Empty Dream Machine": {
+          "track_number": 7,
+          "duration": "5:10",
+          "duration_seconds": 310,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 3500000
+        },
+        "The Manifesto": {
+          "track_number": 8,
+          "duration": "3:19",
+          "duration_seconds": 199,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 10900000
+        },
+        "The Plastic Guru": {
+          "track_number": 9,
+          "duration": "4:45",
+          "duration_seconds": 285,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 3000000
+        },
+        "Delirium": {
+          "track_number": 10,
+          "duration": "4:10",
+          "duration_seconds": 250,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 2800000
+        },
+        "Damascus": {
+          "track_number": 11,
+          "duration": "4:56",
+          "duration_seconds": 296,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 5500000
+        },
+        "The Shadowy Light": {
+          "track_number": 12,
+          "duration": "4:40",
+          "duration_seconds": 280,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 2500000
+        },
+        "Casablanca": {
+          "track_number": 13,
+          "duration": "4:30",
+          "duration_seconds": 270,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 3200000
+        },
+        "The Sweet Prince": {
+          "track_number": 14,
+          "duration": "5:05",
+          "duration_seconds": 305,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 2800000
+        },
+        "Mañana Was Today": {
+          "track_number": 15,
+          "duration": "5:12",
+          "duration_seconds": 312,
+          "album": "The Mountain",
+          "album_number": 9,
+          "spotify_streams_approx": 2200000
+        }
+      }
+    }
+  }
+}

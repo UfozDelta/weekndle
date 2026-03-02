@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gorillazle</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #12121a;
+      --surface: #1a1a26;
+      --border: #2a2a3a;
+      --text: #e0e0f0;
+      --muted: #555570;
+      --green: #4caf6e;
+      --yellow: #c9a227;
+      --red: #c94444;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── NAV ── */
+    nav {
+      width: 100%;
+      background: #0e0e16;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 0.12em; color: #fff; }
+    .nav-right { display: flex; gap: 0.75rem; }
+    .nav-btn {
+      background: none;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-btn:hover { color: #fff; border-color: #555; }
+
+    /* ── MAIN ── */
+    main {
+      width: 100%;
+      max-width: 1050px;
+      padding: 2rem 1.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+    }
+
+    .tagline { font-size: 1rem; color: var(--muted); letter-spacing: 0.06em; }
+
+    /* ── GUESS GRID ── */
+    .grid-wrap { width: 100%; overflow-x: auto; }
+
+    .guess-grid {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+    }
+
+    .guess-grid thead th {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      padding: 0 0.6rem 0.75rem;
+      text-align: center;
+      font-weight: 500;
+    }
+    .guess-grid thead th:first-child { text-align: left; padding-left: 0; }
+
+    .guess-grid tbody tr { height: 68px; }
+    .guess-grid tbody td {
+      padding: 0.4rem 0.5rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .guess-grid tbody td:first-child { text-align: left; padding-left: 0; }
+
+    .cell-empty {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cell-song {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cell {
+      height: 58px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.3;
+      gap: 2px;
+      padding: 0 0.5rem;
+      min-width: 100px;
+    }
+    .cell .label { font-size: 0.8rem; font-weight: 400; opacity: 0.75; }
+    .cell .arrow { font-size: 1rem; }
+
+    .cell-green  { background: var(--green);  color: #fff; }
+    .cell-yellow { background: var(--yellow); color: #fff; }
+    .cell-red    { background: #2a2a3a; color: #aaa; border: 1px solid var(--border); }
+
+    .cell-streams-more  { background: #2a2a3a; color: #e06060; border: 1px solid var(--border); }
+    .cell-streams-less  { background: #2a2a3a; color: #60b080; border: 1px solid var(--border); }
+    .cell-streams-exact { background: var(--green); color: #fff; }
+
+    .guess-counter { font-size: 1rem; color: var(--muted); }
+    .guess-counter span { color: #fff; font-weight: 700; }
+
+    /* ── INPUT ── */
+    .input-area { width: 100%; position: relative; }
+    .search-row { display: flex; gap: 0.75rem; }
+    .search-box-wrap { position: relative; flex: 1; }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    #guess-input {
+      width: 100%;
+      padding: 1rem 1.2rem 1rem 3rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    #guess-input:focus { border-color: #555; }
+    #guess-input::placeholder { color: var(--muted); }
+    #guess-input:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    #submit-btn {
+      padding: 1rem 2rem;
+      background: #6c5ce7;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    #submit-btn:hover:not(:disabled) { background: #7d6ff0; }
+    #submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    #autocomplete {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0; right: 0;
+      background: #1e1e2e;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      z-index: 100;
+      max-height: 300px;
+      overflow-y: auto;
+      display: none;
+    }
+    #autocomplete.open { display: block; }
+
+    .ac-item {
+      padding: 0.8rem 1.2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      border-bottom: 1px solid #22223a;
+    }
+    .ac-item:last-child { border-bottom: none; }
+    .ac-item:hover, .ac-item.selected { background: #2a2a3e; }
+    .ac-item .ac-song { color: #fff; font-weight: 600; }
+
+    #status {
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      min-height: 1.5rem;
+      color: #fff;
+    }
+
+    /* ── RESULT BANNER ── */
+    .result-banner {
+      width: 100%;
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      text-align: center;
+      display: none;
+    }
+    .result-banner.win  { background: #1a3a24; border: 1px solid var(--green); }
+    .result-banner.lose { background: #3a1a1a; border: 1px solid var(--red); }
+    .result-banner h2 { font-size: 1.7rem; margin-bottom: 0.4rem; }
+    .result-banner p  { font-size: 1rem; color: #bbb; }
+    .result-banner .answer { color: #fff; font-weight: 700; }
+
+    #new-game-btn {
+      margin-top: 1.1rem;
+      padding: 0.8rem 1.8rem;
+      background: #6c5ce7;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    #new-game-btn:hover { background: #7d6ff0; }
+
+    /* ── ALBUM ART ROW ── */
+    .album-art-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .album-art {
+      width: 90px;
+      height: 90px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      overflow: hidden;
+      position: relative;
+      transition: border-color 0.2s, opacity 0.2s;
+      cursor: default;
+      flex-shrink: 0;
+    }
+    .album-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .album-art .art-label {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      align-items: flex-end;
+      padding: 4px 5px;
+      font-size: 0.55rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.2;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .album-art:hover .art-label { opacity: 1; }
+    .album-art.guessed { opacity: 0.35; filter: grayscale(60%); }
+    .album-art.correct { border-color: var(--green) !important; opacity: 1 !important; filter: none !important; box-shadow: 0 0 12px var(--green); }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.hidden { display: none; }
+
+    .modal {
+      background: #181824;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      max-width: 640px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
+    .modal p { font-size: 0.88rem; color: #bbb; margin-bottom: 0.75rem; }
+    .modal ul {
+      list-style: disc;
+      padding-left: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+    }
+    .modal ul li { font-size: 0.85rem; color: #ccc; line-height: 1.5; }
+    .modal .art-preview { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 1rem 0; }
+
+    .close-btn {
+      padding: 0.6rem 1.5rem;
+      background: #6c5ce7;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .close-btn:hover { background: #7d6ff0; }
+
+    .legend { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 0.75rem 0; }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: #bbb; }
+    .legend-dot { width: 14px; height: 14px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">GORILLAZLE</span>
+  <div class="nav-right">
+    <button class="nav-btn" id="how-btn">How to Play</button>
+    <a class="nav-btn" href="gorillaz_disography.html">Discography &rarr;</a>
+    <a class="nav-btn" href="index.html">&larr; Back to Menu</a>
+  </div>
+</nav>
+
+<main>
+  <p class="tagline">Guess the Gorillaz song &mdash; 8 tries</p>
+
+  <!-- Input -->
+  <div class="input-area">
+    <div class="search-row">
+      <div class="search-box-wrap">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="guess-input" placeholder="Type a song name…" autocomplete="off" />
+        <div id="autocomplete"></div>
+      </div>
+      <button id="submit-btn" onclick="submitGuess()">Guess</button>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <p id="status"></p>
+
+  <!-- Guess counter -->
+  <p class="guess-counter" id="guess-counter"><span>0</span> / 8 guesses</p>
+
+  <!-- Result banner -->
+  <div class="result-banner" id="result-banner">
+    <h2 id="result-title"></h2>
+    <p id="result-body"></p>
+    <button id="new-game-btn" onclick="newGame()">Play Again</button>
+  </div>
+
+  <!-- Guess grid -->
+  <div class="grid-wrap">
+    <table class="guess-grid" id="guess-grid">
+      <thead>
+        <tr>
+          <th style="min-width:200px">Song</th>
+          <th style="min-width:100px">Album</th>
+          <th style="min-width:80px">Track #</th>
+          <th style="min-width:80px">Duration</th>
+          <th style="min-width:100px">Streams</th>
+        </tr>
+      </thead>
+      <tbody id="grid-body"></tbody>
+    </table>
+  </div>
+
+  <!-- Album art row -->
+  <div class="album-art-row" id="art-row">
+    <div class="album-art" data-album="1" title="Gorillaz"><img src="https://i.scdn.co/image/ab67616d00001e02c73a7bb15f43bae86215934b" alt="Gorillaz"><span class="art-label">Gorillaz</span></div>
+    <div class="album-art" data-album="2" title="Demon Days"><img src="https://i.scdn.co/image/ab67616d00001e02622aefd794f6fe4d8e714358" alt="Demon Days"><span class="art-label">Demon Days</span></div>
+    <div class="album-art" data-album="3" title="Plastic Beach"><img src="https://i.scdn.co/image/ab67616d00001e02661d019f34569f79eae9e985" alt="Plastic Beach"><span class="art-label">Plastic Beach</span></div>
+    <div class="album-art" data-album="4" title="The Fall"><img src="https://i.scdn.co/image/ab67616d00001e02bfcb1c9ce002a2c2cd5e9f34" alt="The Fall"><span class="art-label">The Fall</span></div>
+    <div class="album-art" data-album="5" title="Humanz"><img src="https://i.scdn.co/image/ab67616d00001e029a0d4fc558f2337ee5b3a5c2" alt="Humanz"><span class="art-label">Humanz</span></div>
+    <div class="album-art" data-album="6" title="The Now Now"><img src="https://i.scdn.co/image/ab67616d00001e024d9f7b88e82db31d13ac6668" alt="The Now Now"><span class="art-label">The Now Now</span></div>
+    <div class="album-art" data-album="7" title="Song Machine"><img src="https://i.scdn.co/image/ab67616d00001e0226229a2e7eba1f3a2aad9e40" alt="Song Machine"><span class="art-label">Song Machine</span></div>
+    <div class="album-art" data-album="8" title="Cracker Island"><img src="https://i.scdn.co/image/ab67616d00001e0219707804f73dc50f7a29cd86" alt="Cracker Island"><span class="art-label">Cracker Island</span></div>
+    <div class="album-art" data-album="9" title="The Mountain"><img src="https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4" alt="The Mountain"><span class="art-label">The Mountain</span></div>
+  </div>
+</main>
+
+<!-- HOW TO PLAY MODAL -->
+<div class="modal-overlay hidden" id="modal">
+  <div class="modal">
+    <h2>How to Play:</h2>
+    <p>Goal: Guess the correct Gorillaz song in 8 guesses or less.</p>
+    <ul>
+      <li><strong>Green</strong> in any column means exact match.</li>
+      <li><strong>Album:</strong> Yellow means the correct song is within &plusmn;2 albums in the discography.</li>
+      <li><strong>Track number:</strong> Yellow means the correct song is within &plusmn;2 tracks in the album.</li>
+      <li><strong>Duration:</strong> Yellow means the correct song is within &plusmn;30 seconds in length.</li>
+      <li><strong>Streams:</strong> Only shows more or less; no yellow option.</li>
+      <li>Streams are collected from Spotify.</li>
+      <li>Interludes are included.</li>
+      <li>Standard editions only — no deluxe or bonus tracks.</li>
+      <li>Good luck!</li>
+    </ul>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Exact match</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div> Close (within range)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2a2a3a;border:1px solid #444"></div> Wrong</div>
+    </div>
+    <div class="art-preview">
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e02c73a7bb15f43bae86215934b" alt="Gorillaz"></div>
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e02622aefd794f6fe4d8e714358" alt="Demon Days"></div>
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e02661d019f34569f79eae9e985" alt="Plastic Beach"></div>
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e02bfcb1c9ce002a2c2cd5e9f34" alt="The Fall"></div>
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e029a0d4fc558f2337ee5b3a5c2" alt="Humanz"></div>
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e024d9f7b88e82db31d13ac6668" alt="The Now Now"></div>
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e0226229a2e7eba1f3a2aad9e40" alt="Song Machine"></div>
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e0219707804f73dc50f7a29cd86" alt="Cracker Island"></div>
+      <div class="album-art" style="border:2px solid #333;width:56px;height:56px"><img src="https://i.scdn.co/image/ab67616d00001e02eeb01b41f48210d032d1b6a4" alt="The Mountain"></div>
+    </div>
+    <button class="close-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+const DB = {
+  "Gorillaz": { album_number: 1, release_date: "2001-03-26", type: "Studio Album", tracks: { "Re-Hash": { track_number: 1, duration: "3:39", duration_seconds: 219, spotify_streams_approx: 30900000 }, "5/4": { track_number: 2, duration: "2:41", duration_seconds: 161, spotify_streams_approx: 51600000 }, "Tomorrow Comes Today": { track_number: 3, duration: "3:15", duration_seconds: 195, spotify_streams_approx: 105000000 }, "New Genious (Brother)": { track_number: 4, duration: "3:54", duration_seconds: 234, spotify_streams_approx: 17500000 }, "Clint Eastwood": { track_number: 5, duration: "5:41", duration_seconds: 341, spotify_streams_approx: 1104000000 }, "Man Research (Clapper)": { track_number: 6, duration: "4:33", duration_seconds: 273, spotify_streams_approx: 16700000 }, "Punk": { track_number: 7, duration: "1:34", duration_seconds: 94, spotify_streams_approx: 19900000 }, "Sound Check (Gravity)": { track_number: 8, duration: "5:36", duration_seconds: 336, spotify_streams_approx: 21000000 }, "Double Bass": { track_number: 9, duration: "5:23", duration_seconds: 323, spotify_streams_approx: 17500000 }, "Rock the House": { track_number: 10, duration: "4:09", duration_seconds: 249, spotify_streams_approx: 73900000 }, "19-2000": { track_number: 11, duration: "3:29", duration_seconds: 209, spotify_streams_approx: 210400000 }, "Latin Simone (Qué Pasa Contigo)": { track_number: 12, duration: "3:37", duration_seconds: 217, spotify_streams_approx: 25900000 }, "Starshine": { track_number: 13, duration: "3:33", duration_seconds: 213, spotify_streams_approx: 22500000 }, "Slow Country": { track_number: 14, duration: "3:36", duration_seconds: 216, spotify_streams_approx: 16500000 }, "M1 A1": { track_number: 15, duration: "7:11", duration_seconds: 431, spotify_streams_approx: 16200000 } } },
+  "Demon Days": { album_number: 2, release_date: "2005-05-23", type: "Studio Album", tracks: { "Intro": { track_number: 1, duration: "1:03", duration_seconds: 63, spotify_streams_approx: 20800000 }, "Last Living Souls": { track_number: 2, duration: "3:10", duration_seconds: 190, spotify_streams_approx: 52100000 }, "Kids with Guns": { track_number: 3, duration: "3:47", duration_seconds: 227, spotify_streams_approx: 194800000 }, "O Green World": { track_number: 4, duration: "4:32", duration_seconds: 272, spotify_streams_approx: 105000000 }, "Dirty Harry": { track_number: 5, duration: "3:44", duration_seconds: 224, spotify_streams_approx: 365600000 }, "Feel Good Inc.": { track_number: 6, duration: "3:41", duration_seconds: 221, spotify_streams_approx: 2186000000 }, "El Mañana": { track_number: 7, duration: "3:50", duration_seconds: 230, spotify_streams_approx: 140200000 }, "Every Planet We Reach Is Dead": { track_number: 8, duration: "4:52", duration_seconds: 292, spotify_streams_approx: 55500000 }, "November Has Come": { track_number: 9, duration: "2:48", duration_seconds: 168, spotify_streams_approx: 105100000 }, "All Alone": { track_number: 10, duration: "3:30", duration_seconds: 210, spotify_streams_approx: 57600000 }, "White Light": { track_number: 11, duration: "2:05", duration_seconds: 125, spotify_streams_approx: 30300000 }, "DARE": { track_number: 12, duration: "4:04", duration_seconds: 244, spotify_streams_approx: 703400000 }, "Fire Coming out of the Monkey's Head": { track_number: 13, duration: "3:18", duration_seconds: 198, spotify_streams_approx: 45000000 }, "Don't Get Lost in Heaven": { track_number: 14, duration: "1:54", duration_seconds: 114, spotify_streams_approx: 30800000 }, "Demon Days": { track_number: 15, duration: "4:27", duration_seconds: 267, spotify_streams_approx: 35700000 } } },
+  "Plastic Beach": { album_number: 3, release_date: "2010-03-03", type: "Studio Album", tracks: { "Orchestral Intro": { track_number: 1, duration: "1:15", duration_seconds: 75, spotify_streams_approx: 19500000 }, "Welcome to the World of the Plastic Beach": { track_number: 2, duration: "3:35", duration_seconds: 215, spotify_streams_approx: 36500000 }, "White Flag": { track_number: 3, duration: "4:30", duration_seconds: 270, spotify_streams_approx: 25600000 }, "Rhinestone Eyes": { track_number: 4, duration: "3:19", duration_seconds: 199, spotify_streams_approx: 629500000 }, "Stylo": { track_number: 5, duration: "4:24", duration_seconds: 264, spotify_streams_approx: 152600000 }, "Superfast Jellyfish": { track_number: 6, duration: "2:54", duration_seconds: 174, spotify_streams_approx: 79500000 }, "Empire Ants": { track_number: 7, duration: "4:42", duration_seconds: 282, spotify_streams_approx: 201300000 }, "Glitter Freeze": { track_number: 8, duration: "4:00", duration_seconds: 240, spotify_streams_approx: 26300000 }, "Some Kind of Nature": { track_number: 9, duration: "3:08", duration_seconds: 188, spotify_streams_approx: 40400000 }, "On Melancholy Hill": { track_number: 10, duration: "3:54", duration_seconds: 234, spotify_streams_approx: 939400000 }, "Broken": { track_number: 11, duration: "3:19", duration_seconds: 199, spotify_streams_approx: 63000000 }, "Sweepstakes": { track_number: 12, duration: "5:00", duration_seconds: 300, spotify_streams_approx: 18700000 }, "Plastic Beach": { track_number: 13, duration: "3:48", duration_seconds: 228, spotify_streams_approx: 130600000 }, "To Binge": { track_number: 14, duration: "3:17", duration_seconds: 197, spotify_streams_approx: 46000000 }, "Cloud of Unknowing": { track_number: 15, duration: "3:07", duration_seconds: 187, spotify_streams_approx: 17200000 }, "Pirate Jet": { track_number: 16, duration: "2:31", duration_seconds: 151, spotify_streams_approx: 26100000 } } },
+  "The Fall": { album_number: 4, release_date: "2010-12-25", type: "Studio Album", tracks: { "Phoner to Arizona": { track_number: 1, duration: "2:50", duration_seconds: 170, spotify_streams_approx: 4200000 }, "Revolving Doors": { track_number: 2, duration: "4:08", duration_seconds: 248, spotify_streams_approx: 29000000 }, "HillBilly Man": { track_number: 3, duration: "4:35", duration_seconds: 275, spotify_streams_approx: 10200000 }, "Detroit": { track_number: 4, duration: "4:25", duration_seconds: 265, spotify_streams_approx: 17000000 }, "Shy-Town": { track_number: 5, duration: "1:11", duration_seconds: 71, spotify_streams_approx: 3300000 }, "Little Pink Plastic Bags": { track_number: 6, duration: "5:01", duration_seconds: 301, spotify_streams_approx: 6100000 }, "The Joplin Spider": { track_number: 7, duration: "3:25", duration_seconds: 205, spotify_streams_approx: 4200000 }, "The Parish of Space Dust": { track_number: 8, duration: "2:38", duration_seconds: 158, spotify_streams_approx: 4500000 }, "The Snake in Dallas": { track_number: 9, duration: "2:04", duration_seconds: 124, spotify_streams_approx: 3800000 }, "Amarillo": { track_number: 10, duration: "5:25", duration_seconds: 325, spotify_streams_approx: 11700000 }, "The Speak It Mountains": { track_number: 11, duration: "4:06", duration_seconds: 246, spotify_streams_approx: 3000000 }, "Aspen Forest": { track_number: 12, duration: "3:17", duration_seconds: 197, spotify_streams_approx: 3200000 }, "Bobby in Phoenix": { track_number: 13, duration: "3:30", duration_seconds: 210, spotify_streams_approx: 8600000 }, "California and the Slipping of the Sun": { track_number: 14, duration: "2:47", duration_seconds: 167, spotify_streams_approx: 3500000 }, "Seattle Yodel": { track_number: 15, duration: "0:44", duration_seconds: 44, spotify_streams_approx: 2400000 } } },
+  "Humanz": { album_number: 5, release_date: "2017-04-28", type: "Studio Album", tracks: { "Intro: I Switched My Robot Off": { track_number: 1, duration: "0:36", duration_seconds: 36, spotify_streams_approx: 8900000 }, "Ascension": { track_number: 2, duration: "2:22", duration_seconds: 142, spotify_streams_approx: 99800000 }, "Strobelite": { track_number: 3, duration: "3:27", duration_seconds: 207, spotify_streams_approx: 64100000 }, "Saturnz Barz": { track_number: 4, duration: "3:59", duration_seconds: 239, spotify_streams_approx: 183100000 }, "Momentz": { track_number: 5, duration: "2:40", duration_seconds: 160, spotify_streams_approx: 45600000 }, "Interlude: The Non-Conformist Oath": { track_number: 6, duration: "0:22", duration_seconds: 22, spotify_streams_approx: 5500000 }, "Submission": { track_number: 7, duration: "4:28", duration_seconds: 268, spotify_streams_approx: 32200000 }, "Charger": { track_number: 8, duration: "2:38", duration_seconds: 158, spotify_streams_approx: 35000000 }, "Interlude: Elevator Going Up": { track_number: 9, duration: "0:12", duration_seconds: 12, spotify_streams_approx: 4800000 }, "Andromeda": { track_number: 10, duration: "3:17", duration_seconds: 197, spotify_streams_approx: 176100000 }, "Busted and Blue": { track_number: 11, duration: "2:54", duration_seconds: 174, spotify_streams_approx: 51300000 }, "Interlude: Talk Radio": { track_number: 12, duration: "0:26", duration_seconds: 26, spotify_streams_approx: 4200000 }, "Carnival": { track_number: 13, duration: "3:31", duration_seconds: 211, spotify_streams_approx: 19600000 }, "Let Me Out": { track_number: 14, duration: "4:02", duration_seconds: 242, spotify_streams_approx: 51500000 }, "Interlude: Penthouse": { track_number: 15, duration: "0:13", duration_seconds: 13, spotify_streams_approx: 3800000 }, "Sex Murder Party": { track_number: 16, duration: "3:18", duration_seconds: 198, spotify_streams_approx: 15800000 }, "She's My Collar": { track_number: 17, duration: "3:20", duration_seconds: 200, spotify_streams_approx: 387100000 }, "Hallelujah Money": { track_number: 18, duration: "4:41", duration_seconds: 281, spotify_streams_approx: 16100000 }, "We Got the Power": { track_number: 19, duration: "2:42", duration_seconds: 162, spotify_streams_approx: 38800000 }, "Interlude: New World": { track_number: 20, duration: "0:33", duration_seconds: 33, spotify_streams_approx: 8900000 } } },
+  "The Now Now": { album_number: 6, release_date: "2018-06-29", type: "Studio Album", tracks: { "Humility": { track_number: 1, duration: "3:17", duration_seconds: 197, spotify_streams_approx: 158400000 }, "Tranz": { track_number: 2, duration: "2:52", duration_seconds: 172, spotify_streams_approx: 142100000 }, "Hollywood": { track_number: 3, duration: "4:11", duration_seconds: 251, spotify_streams_approx: 47700000 }, "Kansas": { track_number: 4, duration: "4:08", duration_seconds: 248, spotify_streams_approx: 45600000 }, "Sorcererz": { track_number: 5, duration: "3:50", duration_seconds: 230, spotify_streams_approx: 30700000 }, "Idaho": { track_number: 6, duration: "4:02", duration_seconds: 242, spotify_streams_approx: 18100000 }, "Lake Zurich": { track_number: 7, duration: "5:04", duration_seconds: 304, spotify_streams_approx: 33900000 }, "Magic City": { track_number: 8, duration: "3:32", duration_seconds: 212, spotify_streams_approx: 39200000 }, "Fire Flies": { track_number: 9, duration: "3:17", duration_seconds: 197, spotify_streams_approx: 43600000 }, "One Percent": { track_number: 10, duration: "3:00", duration_seconds: 180, spotify_streams_approx: 15400000 }, "Souk Eye": { track_number: 11, duration: "5:14", duration_seconds: 314, spotify_streams_approx: 60300000 } } },
+  "Song Machine, Season One: Strange Timez": { album_number: 7, release_date: "2020-10-23", type: "Studio Album", tracks: { "Strange Timez": { track_number: 1, duration: "3:39", duration_seconds: 219, spotify_streams_approx: 22200000 }, "The Valley of The Pagans": { track_number: 2, duration: "4:16", duration_seconds: 256, spotify_streams_approx: 50800000 }, "The Lost Chord": { track_number: 3, duration: "4:19", duration_seconds: 259, spotify_streams_approx: 22800000 }, "Pac-Man": { track_number: 4, duration: "3:53", duration_seconds: 233, spotify_streams_approx: 65600000 }, "Chalk Tablet Towers": { track_number: 5, duration: "3:20", duration_seconds: 200, spotify_streams_approx: 15500000 }, "The Pink Phantom": { track_number: 6, duration: "5:17", duration_seconds: 317, spotify_streams_approx: 43600000 }, "Aries": { track_number: 7, duration: "3:12", duration_seconds: 192, spotify_streams_approx: 54200000 }, "Friday 13th": { track_number: 8, duration: "3:49", duration_seconds: 229, spotify_streams_approx: 20700000 }, "Dead Butterflies": { track_number: 9, duration: "5:04", duration_seconds: 304, spotify_streams_approx: 11600000 }, "Désolé": { track_number: 10, duration: "4:31", duration_seconds: 271, spotify_streams_approx: 34900000 }, "Momentary Bliss": { track_number: 11, duration: "3:29", duration_seconds: 209, spotify_streams_approx: 74600000 } } },
+  "Cracker Island": { album_number: 8, release_date: "2023-02-24", type: "Studio Album", tracks: { "Cracker Island": { track_number: 1, duration: "3:41", duration_seconds: 221, spotify_streams_approx: 138200000 }, "Oil": { track_number: 2, duration: "4:00", duration_seconds: 240, spotify_streams_approx: 40300000 }, "The Tired Influencer": { track_number: 3, duration: "2:38", duration_seconds: 158, spotify_streams_approx: 17200000 }, "Tarantula": { track_number: 4, duration: "3:18", duration_seconds: 198, spotify_streams_approx: 19800000 }, "Silent Running": { track_number: 5, duration: "4:08", duration_seconds: 248, spotify_streams_approx: 62200000 }, "New Gold": { track_number: 6, duration: "3:30", duration_seconds: 210, spotify_streams_approx: 257500000 }, "Baby Queen": { track_number: 7, duration: "3:35", duration_seconds: 215, spotify_streams_approx: 55200000 }, "Tormenta": { track_number: 8, duration: "3:42", duration_seconds: 222, spotify_streams_approx: 255300000 }, "Skinny Ape": { track_number: 9, duration: "4:16", duration_seconds: 256, spotify_streams_approx: 26100000 }, "Possession Island": { track_number: 10, duration: "4:17", duration_seconds: 257, spotify_streams_approx: 12200000 } } },
+  "The Mountain": { album_number: 9, release_date: "2026-02-27", type: "Studio Album", tracks: { "The Mountain": { track_number: 1, duration: "5:14", duration_seconds: 314, spotify_streams_approx: 5200000 }, "The Moon Cave": { track_number: 2, duration: "5:30", duration_seconds: 330, spotify_streams_approx: 3800000 }, "The Happy Dictator": { track_number: 3, duration: "3:48", duration_seconds: 228, spotify_streams_approx: 16600000 }, "The Hardest Thing": { track_number: 4, duration: "4:34", duration_seconds: 274, spotify_streams_approx: 5000000 }, "Orange County": { track_number: 5, duration: "3:57", duration_seconds: 237, spotify_streams_approx: 4500000 }, "The God of Lying": { track_number: 6, duration: "4:23", duration_seconds: 263, spotify_streams_approx: 6000000 }, "The Empty Dream Machine": { track_number: 7, duration: "5:10", duration_seconds: 310, spotify_streams_approx: 3500000 }, "The Manifesto": { track_number: 8, duration: "3:19", duration_seconds: 199, spotify_streams_approx: 10900000 }, "The Plastic Guru": { track_number: 9, duration: "4:45", duration_seconds: 285, spotify_streams_approx: 3000000 }, "Delirium": { track_number: 10, duration: "4:10", duration_seconds: 250, spotify_streams_approx: 2800000 }, "Damascus": { track_number: 11, duration: "4:56", duration_seconds: 296, spotify_streams_approx: 5500000 }, "The Shadowy Light": { track_number: 12, duration: "4:40", duration_seconds: 280, spotify_streams_approx: 2500000 }, "Casablanca": { track_number: 13, duration: "4:30", duration_seconds: 270, spotify_streams_approx: 3200000 }, "The Sweet Prince": { track_number: 14, duration: "5:05", duration_seconds: 305, spotify_streams_approx: 2800000 }, "Mañana Was Today": { track_number: 15, duration: "5:12", duration_seconds: 312, spotify_streams_approx: 2200000 } } }
+};
+
+const ALL_SONGS = [];
+for (const [albumName, album] of Object.entries(DB)) {
+  for (const [title, track] of Object.entries(album.tracks)) {
+    ALL_SONGS.push({ title, albumName, albumNumber: album.album_number, albumType: album.type, trackNumber: track.track_number, duration: track.duration, durationSeconds: track.duration_seconds, streams: track.spotify_streams_approx });
+  }
+}
+
+const MAX_GUESSES = 8;
+let target, guesses, gameOver, selectedAcIdx;
+
+function pickRandom() { return ALL_SONGS[Math.floor(Math.random() * ALL_SONGS.length)]; }
+
+function newGame() {
+  target = pickRandom();
+  guesses = []; gameOver = false; selectedAcIdx = -1;
+  document.getElementById('guess-input').value = '';
+  document.getElementById('guess-input').disabled = false;
+  document.getElementById('submit-btn').disabled = false;
+  document.getElementById('status').textContent = '';
+  document.getElementById('result-banner').style.display = 'none';
+  document.getElementById('autocomplete').classList.remove('open');
+  document.querySelectorAll('.album-art').forEach(el => el.classList.remove('guessed', 'correct'));
+  renderGrid(); updateCounter();
+}
+
+function scoreGuess(guess) {
+  const albumDiff = Math.abs(guess.albumNumber - target.albumNumber);
+  const albumResult = albumDiff === 0 ? 'green' : albumDiff <= 2 ? 'yellow' : 'red';
+  const albumDir = guess.albumNumber < target.albumNumber ? '▲' : guess.albumNumber > target.albumNumber ? '▼' : '';
+
+  const trackDiff = Math.abs(guess.trackNumber - target.trackNumber);
+  let trackResult;
+  if (guess.albumName === target.albumName && guess.trackNumber === target.trackNumber) trackResult = 'green';
+  else if (trackDiff <= 2 && guess.albumName === target.albumName) trackResult = 'yellow';
+  else trackResult = 'red';
+  const trackDir = guess.trackNumber < target.trackNumber ? '▲' : guess.trackNumber > target.trackNumber ? '▼' : '';
+
+  const durDiff = Math.abs(guess.durationSeconds - target.durationSeconds);
+  const durResult = durDiff === 0 ? 'green' : durDiff <= 30 ? 'yellow' : 'red';
+  const durDir = guess.durationSeconds < target.durationSeconds ? '▲' : guess.durationSeconds > target.durationSeconds ? '▼' : '';
+
+  const streamsResult = guess.streams === target.streams ? 'exact' : guess.streams < target.streams ? 'more' : 'less';
+  return { albumResult, albumDir, trackResult, trackDir, durResult, durDir, streamsResult };
+}
+
+function formatStreams(n) {
+  if (n >= 1e9) return (n / 1e9).toFixed(2) + 'B';
+  if (n >= 1e6) return Math.round(n / 1e6) + 'M';
+  return n.toLocaleString();
+}
+
+function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function shortAlbum(name) {
+  const map = { "Song Machine, Season One: Strange Timez": "Song Machine" };
+  return map[name] || (name.length > 14 ? name.slice(0, 13) + '…' : name);
+}
+
+function renderGrid() {
+  const tbody = document.getElementById('grid-body');
+  tbody.innerHTML = '';
+  guesses.forEach(g => {
+    const s = scoreGuess(g);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><div class="cell-song">${esc(g.title)}</div></td>
+      <td>${albumCell(g, s)}</td>
+      <td>${trackCell(g, s)}</td>
+      <td>${durCell(g, s)}</td>
+      <td>${streamsCell(g, s)}</td>`;
+    tbody.appendChild(tr);
+  });
+  const remaining = MAX_GUESSES - guesses.length;
+  for (let i = 0; i < remaining; i++) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td><div class="cell-empty"></div></td><td><div class="cell-empty"></div></td><td><div class="cell-empty"></div></td><td><div class="cell-empty"></div></td><td><div class="cell-empty"></div></td>`;
+    tbody.appendChild(tr);
+  }
+}
+
+function albumCell(g, s) {
+  const cls = s.albumResult === 'green' ? 'cell-green' : s.albumResult === 'yellow' ? 'cell-yellow' : 'cell-red';
+  const dir = s.albumDir ? `<span class="arrow">${s.albumDir}</span>` : '';
+  return `<div class="cell ${cls}">${dir}<span class="label">${esc(shortAlbum(g.albumName))}</span></div>`;
+}
+function trackCell(g, s) {
+  const cls = s.trackResult === 'green' ? 'cell-green' : s.trackResult === 'yellow' ? 'cell-yellow' : 'cell-red';
+  const dir = s.trackDir ? `<span class="arrow">${s.trackDir}</span>` : '';
+  return `<div class="cell ${cls}">${dir}<span class="label">#${g.trackNumber}</span></div>`;
+}
+function durCell(g, s) {
+  const cls = s.durResult === 'green' ? 'cell-green' : s.durResult === 'yellow' ? 'cell-yellow' : 'cell-red';
+  const dir = s.durDir ? `<span class="arrow">${s.durDir}</span>` : '';
+  return `<div class="cell ${cls}">${dir}<span class="label">${g.duration}</span></div>`;
+}
+function streamsCell(g, s) {
+  let cls, arrow, label;
+  if (s.streamsResult === 'exact') { cls = 'cell-streams-exact'; arrow = ''; label = formatStreams(g.streams); }
+  else if (s.streamsResult === 'more') { cls = 'cell-streams-more'; arrow = '▲'; label = formatStreams(g.streams); }
+  else { cls = 'cell-streams-less'; arrow = '▼'; label = formatStreams(g.streams); }
+  return `<div class="cell ${cls}"><span class="arrow">${arrow}</span><span class="label">${label}</span></div>`;
+}
+
+function updateCounter() {
+  document.getElementById('guess-counter').innerHTML = `<span>${guesses.length}</span> / ${MAX_GUESSES} guesses`;
+}
+
+function markAlbumArt(albumNumber, win) {
+  const el = document.querySelector(`.album-art[data-album="${albumNumber}"]`);
+  if (!el) return;
+  if (win) el.classList.add('correct'); else el.classList.add('guessed');
+}
+
+function submitGuess() {
+  if (gameOver) return;
+  const input = document.getElementById('guess-input');
+  const val = input.value.trim();
+  if (!val) return;
+  const song = ALL_SONGS.find(s => s.title.toLowerCase() === val.toLowerCase());
+  if (!song) { setStatus('Song not found. Pick from the dropdown.'); return; }
+  if (guesses.find(g => g.title.toLowerCase() === song.title.toLowerCase())) { setStatus('You already guessed that song!'); return; }
+
+  guesses.push(song);
+  input.value = '';
+  document.getElementById('autocomplete').classList.remove('open');
+  setStatus('');
+  const won = song.title === target.title;
+  markAlbumArt(song.albumNumber, won);
+  renderGrid(); updateCounter();
+  if (won) endGame(true);
+  else if (guesses.length >= MAX_GUESSES) endGame(false);
+}
+
+function endGame(won) {
+  gameOver = true;
+  document.getElementById('guess-input').disabled = true;
+  document.getElementById('submit-btn').disabled = true;
+  const banner = document.getElementById('result-banner');
+  banner.className = 'result-banner ' + (won ? 'win' : 'lose');
+  banner.style.display = 'block';
+  document.getElementById('result-title').textContent = won ? `Got it in ${guesses.length}!` : 'Better luck next time';
+  document.getElementById('result-body').innerHTML = won
+    ? `The song was <span class="answer">${esc(target.title)}</span> from <span class="answer">${esc(target.albumName)}</span>.`
+    : `The answer was <span class="answer">${esc(target.title)}</span> — ${esc(target.albumName)}, Track ${target.trackNumber}, ${target.duration}.`;
+  if (won) document.querySelector(`.album-art[data-album="${target.albumNumber}"]`).classList.add('correct');
+}
+
+function setStatus(msg) { document.getElementById('status').textContent = msg; }
+
+// Autocomplete
+const input = document.getElementById('guess-input');
+const acEl  = document.getElementById('autocomplete');
+let acMatches = [];
+
+input.addEventListener('input', () => {
+  const q = input.value.trim().toLowerCase();
+  selectedAcIdx = -1;
+  if (!q) { acEl.classList.remove('open'); return; }
+  const guessedTitles = new Set(guesses.map(g => g.title.toLowerCase()));
+  acMatches = ALL_SONGS.filter(s => s.title.toLowerCase().includes(q) && !guessedTitles.has(s.title.toLowerCase())).slice(0, 8);
+  if (!acMatches.length) { acEl.classList.remove('open'); return; }
+  acEl.innerHTML = acMatches.map((s, i) => `<div class="ac-item" data-idx="${i}"><span class="ac-song">${esc(s.title)}</span></div>`).join('');
+  acEl.classList.add('open');
+  acEl.querySelectorAll('.ac-item').forEach(item => {
+    item.addEventListener('mousedown', e => {
+      e.preventDefault();
+      input.value = acMatches[+item.dataset.idx].title;
+      acEl.classList.remove('open');
+    });
+  });
+});
+
+input.addEventListener('keydown', e => {
+  const items = acEl.querySelectorAll('.ac-item');
+  if (e.key === 'ArrowDown') { e.preventDefault(); selectedAcIdx = Math.min(selectedAcIdx + 1, items.length - 1); items.forEach((el, i) => el.classList.toggle('selected', i === selectedAcIdx)); if (items[selectedAcIdx]) input.value = acMatches[selectedAcIdx].title; }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); selectedAcIdx = Math.max(selectedAcIdx - 1, -1); items.forEach((el, i) => el.classList.toggle('selected', i === selectedAcIdx)); if (selectedAcIdx >= 0 && items[selectedAcIdx]) input.value = acMatches[selectedAcIdx].title; }
+  else if (e.key === 'Enter') { e.preventDefault(); if (selectedAcIdx >= 0 && acMatches[selectedAcIdx]) { input.value = acMatches[selectedAcIdx].title; acEl.classList.remove('open'); } submitGuess(); }
+  else if (e.key === 'Escape') { acEl.classList.remove('open'); }
+});
+
+document.addEventListener('click', e => { if (!e.target.closest('.search-box-wrap')) acEl.classList.remove('open'); });
+
+document.getElementById('how-btn').addEventListener('click', () => document.getElementById('modal').classList.remove('hidden'));
+function closeModal() { document.getElementById('modal').classList.add('hidden'); }
+document.getElementById('modal').addEventListener('click', e => { if (e.target === document.getElementById('modal')) closeModal(); });
+
+newGame();
+if (!localStorage.getItem('gorillazle_played')) { document.getElementById('modal').classList.remove('hidden'); localStorage.setItem('gorillazle_played', '1'); }
+</script>
+</body>
+</html>
