@@ -498,7 +498,7 @@ function scoreGuess(guess) {
   const trackDiff = Math.abs(guess.trackNumber - target.trackNumber);
   let trackResult;
   if (guess.albumName === target.albumName && guess.trackNumber === target.trackNumber) trackResult = 'green';
-  else if (trackDiff <= 2 && guess.albumName === target.albumName) trackResult = 'yellow';
+  else if (trackDiff <= 2) trackResult = 'yellow';
   else trackResult = 'red';
   const trackDir = guess.trackNumber < target.trackNumber ? '▲' : guess.trackNumber > target.trackNumber ? '▼' : '';
 
@@ -547,8 +547,7 @@ function renderGrid() {
 
 function albumCell(g, s) {
   const cls = s.albumResult === 'green' ? 'cell-green' : s.albumResult === 'yellow' ? 'cell-yellow' : 'cell-red';
-  const dir = s.albumDir ? `<span class="arrow">${s.albumDir}</span>` : '';
-  return `<div class="cell ${cls}">${dir}<span class="label">${esc(shortAlbum(g.albumName))}</span></div>`;
+  return `<div class="cell ${cls}"><span class="label">${esc(shortAlbum(g.albumName))}</span></div>`;
 }
 function trackCell(g, s) {
   const cls = s.trackResult === 'green' ? 'cell-green' : s.trackResult === 'yellow' ? 'cell-yellow' : 'cell-red';
