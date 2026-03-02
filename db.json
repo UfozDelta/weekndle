@@ -1,0 +1,1174 @@
+{
+  "metadata": {
+    "description": "The Weeknd Complete Discography - All album tracks with game-relevant data",
+    "notes": {
+      "albums_included": "House of Balloons, Thursday, Echoes of Silence, Kiss Land, Beauty Behind the Madness, Starboy, My Dear Melancholy, After Hours, Dawn FM, Hurry Up Tomorrow",
+      "album_order": "Chronological order (1-10) as shown in the game screenshot",
+      "track_number_note": "Twenty Eight, Valerie, and Till Dawn each count as track 10 on their respective mixtapes (House of Balloons, Thursday, Echoes of Silence)",
+      "deluxe_tracks": "No deluxe tracks are included per game rules",
+      "streams_source": "Spotify (approximate, as of early 2026)",
+      "duration_format": "M:SS",
+      "duration_seconds": "Total duration in seconds for comparison (game uses ±30 seconds for yellow)"
+    },
+    "game_rules": {
+      "guesses_allowed": 8,
+      "green": "Exact match in any column",
+      "album_yellow": "Correct song is within ±2 albums in the discography",
+      "track_number_yellow": "Correct song is within ±2 tracks in the album",
+      "duration_yellow": "Correct song is within ±30 seconds in length",
+      "streams": "Only shows more or less (no yellow option)"
+    }
+  },
+  "albums": {
+    "House of Balloons": {
+      "album_number": 1,
+      "release_date": "2011-03-21",
+      "type": "Mixtape",
+      "total_tracks": 10,
+      "tracks": {
+        "High for This": {
+          "track_number": 1,
+          "duration": "4:05",
+          "duration_seconds": 245,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 413000000
+        },
+        "What You Need": {
+          "track_number": 2,
+          "duration": "3:44",
+          "duration_seconds": 224,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 369000000
+        },
+        "House of Balloons / Glass Table Girls": {
+          "track_number": 3,
+          "duration": "6:29",
+          "duration_seconds": 389,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 645000000
+        },
+        "The Morning": {
+          "track_number": 4,
+          "duration": "5:28",
+          "duration_seconds": 328,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 638000000
+        },
+        "Wicked Games": {
+          "track_number": 5,
+          "duration": "5:26",
+          "duration_seconds": 326,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 749000000
+        },
+        "The Party & The After Party": {
+          "track_number": 6,
+          "duration": "7:11",
+          "duration_seconds": 431,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 406000000
+        },
+        "Coming Down": {
+          "track_number": 7,
+          "duration": "4:47",
+          "duration_seconds": 287,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 417000000
+        },
+        "Loft Music": {
+          "track_number": 8,
+          "duration": "6:04",
+          "duration_seconds": 364,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 146000000
+        },
+        "The Knowing": {
+          "track_number": 9,
+          "duration": "5:51",
+          "duration_seconds": 351,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 85000000
+        },
+        "Twenty Eight": {
+          "track_number": 10,
+          "duration": "4:36",
+          "duration_seconds": 276,
+          "album": "House of Balloons",
+          "album_number": 1,
+          "spotify_streams_approx": 161000000,
+          "note": "Bonus track on Trilogy; counts as track 10 per game rules"
+        }
+      }
+    },
+    "Thursday": {
+      "album_number": 2,
+      "release_date": "2011-08-18",
+      "type": "Mixtape",
+      "total_tracks": 10,
+      "tracks": {
+        "Lonely Star": {
+          "track_number": 1,
+          "duration": "5:20",
+          "duration_seconds": 320,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 70000000
+        },
+        "Life of the Party": {
+          "track_number": 2,
+          "duration": "4:20",
+          "duration_seconds": 260,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 48000000
+        },
+        "Thursday": {
+          "track_number": 3,
+          "duration": "5:41",
+          "duration_seconds": 341,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 63000000
+        },
+        "The Zone": {
+          "track_number": 4,
+          "duration": "4:35",
+          "duration_seconds": 275,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 157000000
+        },
+        "The Birds Pt. 1": {
+          "track_number": 5,
+          "duration": "3:53",
+          "duration_seconds": 233,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 97000000
+        },
+        "The Birds Pt. 2": {
+          "track_number": 6,
+          "duration": "5:33",
+          "duration_seconds": 333,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 88000000
+        },
+        "Gone": {
+          "track_number": 7,
+          "duration": "4:53",
+          "duration_seconds": 293,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 48000000
+        },
+        "Rolling Stone": {
+          "track_number": 8,
+          "duration": "4:33",
+          "duration_seconds": 273,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 52000000
+        },
+        "Heaven or Las Vegas": {
+          "track_number": 9,
+          "duration": "5:47",
+          "duration_seconds": 347,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 50000000
+        },
+        "Valerie": {
+          "track_number": 10,
+          "duration": "4:30",
+          "duration_seconds": 270,
+          "album": "Thursday",
+          "album_number": 2,
+          "spotify_streams_approx": 105000000,
+          "note": "Bonus track on Trilogy; counts as track 10 per game rules"
+        }
+      }
+    },
+    "Echoes of Silence": {
+      "album_number": 3,
+      "release_date": "2011-12-21",
+      "type": "Mixtape",
+      "total_tracks": 10,
+      "tracks": {
+        "D.D.": {
+          "track_number": 1,
+          "duration": "4:05",
+          "duration_seconds": 245,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 128000000
+        },
+        "Montreal": {
+          "track_number": 2,
+          "duration": "4:31",
+          "duration_seconds": 271,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 72000000
+        },
+        "Outside": {
+          "track_number": 3,
+          "duration": "4:34",
+          "duration_seconds": 274,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 48000000
+        },
+        "XO / The Host": {
+          "track_number": 4,
+          "duration": "6:13",
+          "duration_seconds": 373,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 68000000
+        },
+        "Initiation": {
+          "track_number": 5,
+          "duration": "4:24",
+          "duration_seconds": 264,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 50000000
+        },
+        "Same Old Song": {
+          "track_number": 6,
+          "duration": "4:12",
+          "duration_seconds": 252,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 36000000
+        },
+        "The Fall": {
+          "track_number": 7,
+          "duration": "4:51",
+          "duration_seconds": 291,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 46000000
+        },
+        "Next": {
+          "track_number": 8,
+          "duration": "3:28",
+          "duration_seconds": 208,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 29000000
+        },
+        "Echoes of Silence": {
+          "track_number": 9,
+          "duration": "4:21",
+          "duration_seconds": 261,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 55000000
+        },
+        "Till Dawn (Here Comes the Sun)": {
+          "track_number": 10,
+          "duration": "5:42",
+          "duration_seconds": 342,
+          "album": "Echoes of Silence",
+          "album_number": 3,
+          "spotify_streams_approx": 45000000,
+          "note": "Bonus track on Trilogy; counts as track 10 per game rules"
+        }
+      }
+    },
+    "Kiss Land": {
+      "album_number": 4,
+      "release_date": "2013-09-10",
+      "type": "Studio Album",
+      "total_tracks": 10,
+      "tracks": {
+        "Professional": {
+          "track_number": 1,
+          "duration": "4:24",
+          "duration_seconds": 264,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 95000000
+        },
+        "The Town": {
+          "track_number": 2,
+          "duration": "3:56",
+          "duration_seconds": 236,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 60000000
+        },
+        "Adaptation": {
+          "track_number": 3,
+          "duration": "5:11",
+          "duration_seconds": 311,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 55000000
+        },
+        "Love in the Sky": {
+          "track_number": 4,
+          "duration": "5:33",
+          "duration_seconds": 333,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 63000000
+        },
+        "Belong to the World": {
+          "track_number": 5,
+          "duration": "5:44",
+          "duration_seconds": 344,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 55000000
+        },
+        "Live For": {
+          "track_number": 6,
+          "duration": "4:42",
+          "duration_seconds": 282,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 109000000
+        },
+        "Wanderlust": {
+          "track_number": 7,
+          "duration": "4:40",
+          "duration_seconds": 280,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 75000000
+        },
+        "Kiss Land": {
+          "track_number": 8,
+          "duration": "6:38",
+          "duration_seconds": 398,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 131000000
+        },
+        "Pretty": {
+          "track_number": 9,
+          "duration": "4:41",
+          "duration_seconds": 281,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 52000000
+        },
+        "Tears in the Rain": {
+          "track_number": 10,
+          "duration": "4:22",
+          "duration_seconds": 262,
+          "album": "Kiss Land",
+          "album_number": 4,
+          "spotify_streams_approx": 47000000
+        }
+      }
+    },
+    "Beauty Behind the Madness": {
+      "album_number": 5,
+      "release_date": "2015-08-28",
+      "type": "Studio Album",
+      "total_tracks": 14,
+      "tracks": {
+        "Real Life": {
+          "track_number": 1,
+          "duration": "4:18",
+          "duration_seconds": 258,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 145000000
+        },
+        "Losers": {
+          "track_number": 2,
+          "duration": "4:41",
+          "duration_seconds": 281,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 141000000
+        },
+        "Tell Your Friends": {
+          "track_number": 3,
+          "duration": "5:34",
+          "duration_seconds": 334,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 297000000
+        },
+        "Often": {
+          "track_number": 4,
+          "duration": "4:10",
+          "duration_seconds": 250,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 1256000000
+        },
+        "The Hills": {
+          "track_number": 5,
+          "duration": "3:55",
+          "duration_seconds": 235,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 2954000000
+        },
+        "Acquainted": {
+          "track_number": 6,
+          "duration": "5:48",
+          "duration_seconds": 348,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 595000000
+        },
+        "Can't Feel My Face": {
+          "track_number": 7,
+          "duration": "3:35",
+          "duration_seconds": 215,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 2123000000
+        },
+        "Shameless": {
+          "track_number": 8,
+          "duration": "3:44",
+          "duration_seconds": 224,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 242000000
+        },
+        "Earned It": {
+          "track_number": 9,
+          "duration": "4:13",
+          "duration_seconds": 253,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 2088000000
+        },
+        "In the Night": {
+          "track_number": 10,
+          "duration": "3:56",
+          "duration_seconds": 236,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 640000000
+        },
+        "As You Are": {
+          "track_number": 11,
+          "duration": "5:28",
+          "duration_seconds": 328,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 177000000
+        },
+        "Dark Times": {
+          "track_number": 12,
+          "duration": "4:20",
+          "duration_seconds": 260,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 279000000
+        },
+        "Prisoner": {
+          "track_number": 13,
+          "duration": "4:51",
+          "duration_seconds": 291,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 231000000
+        },
+        "Angel": {
+          "track_number": 14,
+          "duration": "5:35",
+          "duration_seconds": 335,
+          "album": "Beauty Behind the Madness",
+          "album_number": 5,
+          "spotify_streams_approx": 153000000
+        }
+      }
+    },
+    "Starboy": {
+      "album_number": 6,
+      "release_date": "2016-11-25",
+      "type": "Studio Album",
+      "total_tracks": 18,
+      "tracks": {
+        "Starboy": {
+          "track_number": 1,
+          "duration": "3:50",
+          "duration_seconds": 230,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 4382000000
+        },
+        "Party Monster": {
+          "track_number": 2,
+          "duration": "4:09",
+          "duration_seconds": 249,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 1011000000
+        },
+        "False Alarm": {
+          "track_number": 3,
+          "duration": "3:40",
+          "duration_seconds": 220,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 345000000
+        },
+        "Reminder": {
+          "track_number": 4,
+          "duration": "3:38",
+          "duration_seconds": 218,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 1396000000
+        },
+        "Rockin'": {
+          "track_number": 5,
+          "duration": "3:52",
+          "duration_seconds": 232,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 285000000
+        },
+        "Secrets": {
+          "track_number": 6,
+          "duration": "4:25",
+          "duration_seconds": 265,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 407000000
+        },
+        "True Colors": {
+          "track_number": 7,
+          "duration": "3:27",
+          "duration_seconds": 207,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 331000000
+        },
+        "Stargirl Interlude": {
+          "track_number": 8,
+          "duration": "1:51",
+          "duration_seconds": 111,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 1516000000
+        },
+        "Sidewalks": {
+          "track_number": 9,
+          "duration": "3:51",
+          "duration_seconds": 231,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 472000000
+        },
+        "Six Feet Under": {
+          "track_number": 10,
+          "duration": "3:58",
+          "duration_seconds": 238,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 341000000
+        },
+        "Love to Lay": {
+          "track_number": 11,
+          "duration": "3:43",
+          "duration_seconds": 223,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 177000000
+        },
+        "A Lonely Night": {
+          "track_number": 12,
+          "duration": "3:40",
+          "duration_seconds": 220,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 294000000
+        },
+        "Attention": {
+          "track_number": 13,
+          "duration": "3:23",
+          "duration_seconds": 203,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 210000000
+        },
+        "Ordinary Life": {
+          "track_number": 14,
+          "duration": "3:41",
+          "duration_seconds": 221,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 252000000
+        },
+        "Nothing Without You": {
+          "track_number": 15,
+          "duration": "3:18",
+          "duration_seconds": 198,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 215000000
+        },
+        "All I Know": {
+          "track_number": 16,
+          "duration": "5:21",
+          "duration_seconds": 321,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 191000000
+        },
+        "Die for You": {
+          "track_number": 17,
+          "duration": "4:01",
+          "duration_seconds": 241,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 3161000000
+        },
+        "I Feel It Coming": {
+          "track_number": 18,
+          "duration": "4:29",
+          "duration_seconds": 269,
+          "album": "Starboy",
+          "album_number": 6,
+          "spotify_streams_approx": 2152000000
+        }
+      }
+    },
+    "My Dear Melancholy,": {
+      "album_number": 7,
+      "release_date": "2018-03-30",
+      "type": "EP",
+      "total_tracks": 6,
+      "tracks": {
+        "Call Out My Name": {
+          "track_number": 1,
+          "duration": "3:48",
+          "duration_seconds": 228,
+          "album": "My Dear Melancholy,",
+          "album_number": 7,
+          "spotify_streams_approx": 2350000000
+        },
+        "Try Me": {
+          "track_number": 2,
+          "duration": "3:34",
+          "duration_seconds": 214,
+          "album": "My Dear Melancholy,",
+          "album_number": 7,
+          "spotify_streams_approx": 426000000
+        },
+        "Wasted Times": {
+          "track_number": 3,
+          "duration": "3:43",
+          "duration_seconds": 223,
+          "album": "My Dear Melancholy,",
+          "album_number": 7,
+          "spotify_streams_approx": 381000000
+        },
+        "I Was Never There": {
+          "track_number": 4,
+          "duration": "4:02",
+          "duration_seconds": 242,
+          "album": "My Dear Melancholy,",
+          "album_number": 7,
+          "spotify_streams_approx": 1421000000
+        },
+        "Hurt You": {
+          "track_number": 5,
+          "duration": "3:44",
+          "duration_seconds": 224,
+          "album": "My Dear Melancholy,",
+          "album_number": 7,
+          "spotify_streams_approx": 386000000
+        },
+        "Privilege": {
+          "track_number": 6,
+          "duration": "2:52",
+          "duration_seconds": 172,
+          "album": "My Dear Melancholy,",
+          "album_number": 7,
+          "spotify_streams_approx": 219000000
+        }
+      }
+    },
+    "After Hours": {
+      "album_number": 8,
+      "release_date": "2020-03-20",
+      "type": "Studio Album",
+      "total_tracks": 14,
+      "tracks": {
+        "Alone Again": {
+          "track_number": 1,
+          "duration": "4:10",
+          "duration_seconds": 250,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 220000000
+        },
+        "Too Late": {
+          "track_number": 2,
+          "duration": "3:59",
+          "duration_seconds": 239,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 217000000
+        },
+        "Hardest to Love": {
+          "track_number": 3,
+          "duration": "3:31",
+          "duration_seconds": 211,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 224000000
+        },
+        "Scared to Live": {
+          "track_number": 4,
+          "duration": "3:11",
+          "duration_seconds": 191,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 193000000
+        },
+        "Snowchild": {
+          "track_number": 5,
+          "duration": "4:07",
+          "duration_seconds": 247,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 183000000
+        },
+        "Escape from LA": {
+          "track_number": 6,
+          "duration": "5:56",
+          "duration_seconds": 356,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 221000000
+        },
+        "Heartless": {
+          "track_number": 7,
+          "duration": "3:18",
+          "duration_seconds": 198,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 1205000000
+        },
+        "Faith": {
+          "track_number": 8,
+          "duration": "4:43",
+          "duration_seconds": 283,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 241000000
+        },
+        "Blinding Lights": {
+          "track_number": 9,
+          "duration": "3:20",
+          "duration_seconds": 200,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 5292000000
+        },
+        "In Your Eyes": {
+          "track_number": 10,
+          "duration": "3:57",
+          "duration_seconds": 237,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 1105000000
+        },
+        "Save Your Tears": {
+          "track_number": 11,
+          "duration": "3:35",
+          "duration_seconds": 215,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 2634000000
+        },
+        "Repeat After Me (Interlude)": {
+          "track_number": 12,
+          "duration": "3:15",
+          "duration_seconds": 195,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 136000000
+        },
+        "After Hours": {
+          "track_number": 13,
+          "duration": "6:01",
+          "duration_seconds": 361,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 1296000000
+        },
+        "Until I Bleed Out": {
+          "track_number": 14,
+          "duration": "3:10",
+          "duration_seconds": 190,
+          "album": "After Hours",
+          "album_number": 8,
+          "spotify_streams_approx": 130000000
+        }
+      }
+    },
+    "Dawn FM": {
+      "album_number": 9,
+      "release_date": "2022-01-07",
+      "type": "Studio Album",
+      "total_tracks": 16,
+      "tracks": {
+        "Dawn FM": {
+          "track_number": 1,
+          "duration": "1:37",
+          "duration_seconds": 97,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 80000000
+        },
+        "Gasoline": {
+          "track_number": 2,
+          "duration": "3:33",
+          "duration_seconds": 213,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 190000000
+        },
+        "How Do I Make You Love Me?": {
+          "track_number": 3,
+          "duration": "3:34",
+          "duration_seconds": 214,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 189000000
+        },
+        "Take My Breath": {
+          "track_number": 4,
+          "duration": "5:39",
+          "duration_seconds": 339,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 258000000
+        },
+        "Sacrifice": {
+          "track_number": 5,
+          "duration": "3:09",
+          "duration_seconds": 189,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 464000000
+        },
+        "A Tale by Quincy": {
+          "track_number": 6,
+          "duration": "1:32",
+          "duration_seconds": 92,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 42000000
+        },
+        "Out of Time": {
+          "track_number": 7,
+          "duration": "3:34",
+          "duration_seconds": 214,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 616000000
+        },
+        "Here We Go... Again": {
+          "track_number": 8,
+          "duration": "3:14",
+          "duration_seconds": 194,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 124000000
+        },
+        "Best Friends": {
+          "track_number": 9,
+          "duration": "2:46",
+          "duration_seconds": 166,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 149000000
+        },
+        "Is There Someone Else?": {
+          "track_number": 10,
+          "duration": "3:20",
+          "duration_seconds": 200,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 1025000000
+        },
+        "Starry Eyes": {
+          "track_number": 11,
+          "duration": "3:28",
+          "duration_seconds": 208,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 120000000
+        },
+        "Every Angel is Terrifying": {
+          "track_number": 12,
+          "duration": "2:11",
+          "duration_seconds": 131,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 45000000
+        },
+        "Don't Break My Heart": {
+          "track_number": 13,
+          "duration": "3:32",
+          "duration_seconds": 212,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 95000000
+        },
+        "I Heard You're Married": {
+          "track_number": 14,
+          "duration": "3:23",
+          "duration_seconds": 203,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 121000000
+        },
+        "Less Than Zero": {
+          "track_number": 15,
+          "duration": "3:32",
+          "duration_seconds": 212,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 401000000
+        },
+        "Phantom Regret by Jim": {
+          "track_number": 16,
+          "duration": "3:16",
+          "duration_seconds": 196,
+          "album": "Dawn FM",
+          "album_number": 9,
+          "spotify_streams_approx": 50000000
+        }
+      }
+    },
+    "Hurry Up Tomorrow": {
+      "album_number": 10,
+      "release_date": "2025-01-31",
+      "type": "Studio Album",
+      "total_tracks": 22,
+      "tracks": {
+        "Wake Me Up": {
+          "track_number": 1,
+          "duration": "5:08",
+          "duration_seconds": 308,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 85000000
+        },
+        "Cry for Me": {
+          "track_number": 2,
+          "duration": "3:44",
+          "duration_seconds": 224,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 354000000
+        },
+        "I Can't Fucking Sing": {
+          "track_number": 3,
+          "duration": "0:12",
+          "duration_seconds": 12,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 30000000
+        },
+        "São Paulo": {
+          "track_number": 4,
+          "duration": "5:01",
+          "duration_seconds": 301,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 606000000
+        },
+        "Until We're Skin & Bones": {
+          "track_number": 5,
+          "duration": "0:22",
+          "duration_seconds": 22,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 20000000
+        },
+        "Baptized in Fear": {
+          "track_number": 6,
+          "duration": "3:52",
+          "duration_seconds": 232,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 130000000
+        },
+        "Open Hearts": {
+          "track_number": 7,
+          "duration": "3:54",
+          "duration_seconds": 234,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 126000000
+        },
+        "Opening Night": {
+          "track_number": 8,
+          "duration": "1:36",
+          "duration_seconds": 96,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 25000000
+        },
+        "Reflections Laughing": {
+          "track_number": 9,
+          "duration": "4:51",
+          "duration_seconds": 291,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 50000000
+        },
+        "Enjoy the Show": {
+          "track_number": 10,
+          "duration": "5:01",
+          "duration_seconds": 301,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 55000000
+        },
+        "Given Up on Me": {
+          "track_number": 11,
+          "duration": "5:54",
+          "duration_seconds": 354,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 40000000
+        },
+        "I Can't Wait to Get There": {
+          "track_number": 12,
+          "duration": "3:08",
+          "duration_seconds": 188,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 35000000
+        },
+        "Timeless": {
+          "track_number": 13,
+          "duration": "4:16",
+          "duration_seconds": 256,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 1399000000
+        },
+        "Niagara Falls": {
+          "track_number": 14,
+          "duration": "4:37",
+          "duration_seconds": 277,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 45000000
+        },
+        "Take Me Back to LA": {
+          "track_number": 15,
+          "duration": "4:13",
+          "duration_seconds": 253,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 50000000
+        },
+        "Big Sleep": {
+          "track_number": 16,
+          "duration": "3:45",
+          "duration_seconds": 225,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 35000000
+        },
+        "Give Me Mercy": {
+          "track_number": 17,
+          "duration": "3:36",
+          "duration_seconds": 216,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 30000000
+        },
+        "Drive": {
+          "track_number": 18,
+          "duration": "3:08",
+          "duration_seconds": 188,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 35000000
+        },
+        "The Abyss": {
+          "track_number": 19,
+          "duration": "4:42",
+          "duration_seconds": 282,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 152000000
+        },
+        "Red Terror": {
+          "track_number": 20,
+          "duration": "3:51",
+          "duration_seconds": 231,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 30000000
+        },
+        "Without a Warning": {
+          "track_number": 21,
+          "duration": "4:57",
+          "duration_seconds": 297,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 35000000
+        },
+        "Hurry Up Tomorrow": {
+          "track_number": 22,
+          "duration": "4:51",
+          "duration_seconds": 291,
+          "album": "Hurry Up Tomorrow",
+          "album_number": 10,
+          "spotify_streams_approx": 40000000
+        }
+      }
+    }
+  },
+  "quick_lookup": {
+    "total_songs": 130,
+    "album_order": [
+      "House of Balloons",
+      "Thursday",
+      "Echoes of Silence",
+      "Kiss Land",
+      "Beauty Behind the Madness",
+      "Starboy",
+      "My Dear Melancholy,",
+      "After Hours",
+      "Dawn FM",
+      "Hurry Up Tomorrow"
+    ],
+    "album_track_counts": {
+      "House of Balloons": 10,
+      "Thursday": 10,
+      "Echoes of Silence": 10,
+      "Kiss Land": 10,
+      "Beauty Behind the Madness": 14,
+      "Starboy": 18,
+      "My Dear Melancholy,": 6,
+      "After Hours": 14,
+      "Dawn FM": 16,
+      "Hurry Up Tomorrow": 22
+    }
+  }
+}

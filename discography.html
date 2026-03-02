@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekndle — Discography</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #12121a;
+      --surface: #1a1a26;
+      --border: #2a2a3a;
+      --text: #e0e0f0;
+      --muted: #555570;
+      --green: #4caf6e;
+      --yellow: #c9a227;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      width: 100%;
+      background: #0e0e16;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 0.12em; color: #fff; }
+
+    .nav-btn {
+      background: none;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-btn:hover { color: #fff; border-color: #555; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      text-align: center;
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+
+    .page-header p {
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* ── GRID ── */
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ── CARD ── */
+    .album-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .album-header {
+      padding: 1rem 1.25rem;
+      background: #161620;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .album-cover {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .album-header-text { flex: 1; }
+
+    .album-number {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .album-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .album-meta {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      align-items: center;
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      border-radius: 5px;
+      padding: 2px 7px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .badge.mixtape { border-color: #5a3e1b; color: #c87941; }
+    .badge.ep      { border-color: #1b3a5a; color: #4192c8; }
+    .badge.studio  { border-color: #1b3a28; color: #41c873; }
+
+    /* ── TRACK TABLE ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    thead th {
+      padding: 0.55rem 1rem;
+      text-align: left;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--border);
+    }
+    thead th:first-child { width: 32px; }
+    thead th:last-child  { text-align: right; }
+
+    tbody tr {
+      border-bottom: 1px solid #1e1e2e;
+      transition: background 0.1s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #1e1e2e; }
+
+    td {
+      padding: 0.6rem 1rem;
+      vertical-align: middle;
+    }
+
+    td.track-num {
+      color: var(--muted);
+      font-size: 0.78rem;
+      width: 32px;
+    }
+
+    td.track-name { color: var(--text); font-weight: 500; }
+
+    td.duration {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    td.streams {
+      text-align: right;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .streams-bar-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    .streams-bar {
+      height: 3px;
+      border-radius: 2px;
+      background: var(--green);
+      opacity: 0.55;
+      min-width: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">WEEKNDLE</span>
+  <a class="nav-btn" href="index.html">&larr; Back to Game</a>
+</nav>
+
+<div class="page-header">
+  <h1>THE WEEKND</h1>
+  <p>Complete Discography &mdash; 130 tracks across 10 projects</p>
+</div>
+
+<div class="albums" id="albums"></div>
+
+<script>
+const COVERS = {
+  "House of Balloons":        "https://i.scdn.co/image/ab67616d00001e0206b2a272c98e6103bd0f6628",
+  "Thursday":                 "https://i.scdn.co/image/ab67616d00001e02892de8bd5ed26541d0f55f4f",
+  "Echoes of Silence":        "https://i.scdn.co/image/ab67616d00001e0236fb79728dbb379579cef97e",
+  "Kiss Land":                "https://i.scdn.co/image/ab67616d00001e02ea2cf218d061be959dc51967",
+  "Beauty Behind the Madness":"https://i.scdn.co/image/ab67616d00001e027fcead687e99583072cc217b",
+  "Starboy":                  "https://i.scdn.co/image/ab67616d00001e024718e2b124f79258be7bc452",
+  "My Dear Melancholy,":      "https://i.scdn.co/image/ab67616d00001e021f6a2a40bb692936879db730",
+  "After Hours":              "https://i.scdn.co/image/ab67616d00001e028863bc11d2aa12b54f5aeb36",
+  "Dawn FM":                  "https://i.scdn.co/image/ab67616d00001e024ab2520c2c77a1d66b9ee21d",
+  "Hurry Up Tomorrow":        "https://i.scdn.co/image/ab67616d00001e02982320da137d0de34410df61"
+};
+
+const data = {
+  "House of Balloons": { album_number: 1, release_date: "2011-03-21", type: "Mixtape", tracks: { "High for This": { track_number: 1, duration: "4:05", spotify_streams_approx: 413000000 }, "What You Need": { track_number: 2, duration: "3:44", spotify_streams_approx: 369000000 }, "House of Balloons / Glass Table Girls": { track_number: 3, duration: "6:29", spotify_streams_approx: 645000000 }, "The Morning": { track_number: 4, duration: "5:28", spotify_streams_approx: 638000000 }, "Wicked Games": { track_number: 5, duration: "5:26", spotify_streams_approx: 749000000 }, "The Party & The After Party": { track_number: 6, duration: "7:11", spotify_streams_approx: 406000000 }, "Coming Down": { track_number: 7, duration: "4:47", spotify_streams_approx: 417000000 }, "Loft Music": { track_number: 8, duration: "6:04", spotify_streams_approx: 146000000 }, "The Knowing": { track_number: 9, duration: "5:51", spotify_streams_approx: 85000000 }, "Twenty Eight": { track_number: 10, duration: "4:36", spotify_streams_approx: 161000000 } } },
+  "Thursday": { album_number: 2, release_date: "2011-08-18", type: "Mixtape", tracks: { "Lonely Star": { track_number: 1, duration: "5:20", spotify_streams_approx: 70000000 }, "Life of the Party": { track_number: 2, duration: "4:20", spotify_streams_approx: 48000000 }, "Thursday": { track_number: 3, duration: "5:41", spotify_streams_approx: 63000000 }, "The Zone": { track_number: 4, duration: "4:35", spotify_streams_approx: 157000000 }, "The Birds Pt. 1": { track_number: 5, duration: "3:53", spotify_streams_approx: 97000000 }, "The Birds Pt. 2": { track_number: 6, duration: "5:33", spotify_streams_approx: 88000000 }, "Gone": { track_number: 7, duration: "4:53", spotify_streams_approx: 48000000 }, "Rolling Stone": { track_number: 8, duration: "4:33", spotify_streams_approx: 52000000 }, "Heaven or Las Vegas": { track_number: 9, duration: "5:47", spotify_streams_approx: 50000000 }, "Valerie": { track_number: 10, duration: "4:30", spotify_streams_approx: 105000000 } } },
+  "Echoes of Silence": { album_number: 3, release_date: "2011-12-21", type: "Mixtape", tracks: { "D.D.": { track_number: 1, duration: "4:05", spotify_streams_approx: 128000000 }, "Montreal": { track_number: 2, duration: "4:31", spotify_streams_approx: 72000000 }, "Outside": { track_number: 3, duration: "4:34", spotify_streams_approx: 48000000 }, "XO / The Host": { track_number: 4, duration: "6:13", spotify_streams_approx: 68000000 }, "Initiation": { track_number: 5, duration: "4:24", spotify_streams_approx: 50000000 }, "Same Old Song": { track_number: 6, duration: "4:12", spotify_streams_approx: 36000000 }, "The Fall": { track_number: 7, duration: "4:51", spotify_streams_approx: 46000000 }, "Next": { track_number: 8, duration: "3:28", spotify_streams_approx: 29000000 }, "Echoes of Silence": { track_number: 9, duration: "4:21", spotify_streams_approx: 55000000 }, "Till Dawn (Here Comes the Sun)": { track_number: 10, duration: "5:42", spotify_streams_approx: 45000000 } } },
+  "Kiss Land": { album_number: 4, release_date: "2013-09-10", type: "Studio Album", tracks: { "Professional": { track_number: 1, duration: "4:24", spotify_streams_approx: 95000000 }, "The Town": { track_number: 2, duration: "3:56", spotify_streams_approx: 60000000 }, "Adaptation": { track_number: 3, duration: "5:11", spotify_streams_approx: 55000000 }, "Love in the Sky": { track_number: 4, duration: "5:33", spotify_streams_approx: 63000000 }, "Belong to the World": { track_number: 5, duration: "5:44", spotify_streams_approx: 55000000 }, "Live For": { track_number: 6, duration: "4:42", spotify_streams_approx: 109000000 }, "Wanderlust": { track_number: 7, duration: "4:40", spotify_streams_approx: 75000000 }, "Kiss Land": { track_number: 8, duration: "6:38", spotify_streams_approx: 131000000 }, "Pretty": { track_number: 9, duration: "4:41", spotify_streams_approx: 52000000 }, "Tears in the Rain": { track_number: 10, duration: "4:22", spotify_streams_approx: 47000000 } } },
+  "Beauty Behind the Madness": { album_number: 5, release_date: "2015-08-28", type: "Studio Album", tracks: { "Real Life": { track_number: 1, duration: "4:18", spotify_streams_approx: 145000000 }, "Losers": { track_number: 2, duration: "4:41", spotify_streams_approx: 141000000 }, "Tell Your Friends": { track_number: 3, duration: "5:34", spotify_streams_approx: 297000000 }, "Often": { track_number: 4, duration: "4:10", spotify_streams_approx: 1256000000 }, "The Hills": { track_number: 5, duration: "3:55", spotify_streams_approx: 2954000000 }, "Acquainted": { track_number: 6, duration: "5:48", spotify_streams_approx: 595000000 }, "Can't Feel My Face": { track_number: 7, duration: "3:35", spotify_streams_approx: 2123000000 }, "Shameless": { track_number: 8, duration: "3:44", spotify_streams_approx: 242000000 }, "Earned It": { track_number: 9, duration: "4:13", spotify_streams_approx: 2088000000 }, "In the Night": { track_number: 10, duration: "3:56", spotify_streams_approx: 640000000 }, "As You Are": { track_number: 11, duration: "5:28", spotify_streams_approx: 177000000 }, "Dark Times": { track_number: 12, duration: "4:20", spotify_streams_approx: 279000000 }, "Prisoner": { track_number: 13, duration: "4:51", spotify_streams_approx: 231000000 }, "Angel": { track_number: 14, duration: "5:35", spotify_streams_approx: 153000000 } } },
+  "Starboy": { album_number: 6, release_date: "2016-11-25", type: "Studio Album", tracks: { "Starboy": { track_number: 1, duration: "3:50", spotify_streams_approx: 4382000000 }, "Party Monster": { track_number: 2, duration: "4:09", spotify_streams_approx: 1011000000 }, "False Alarm": { track_number: 3, duration: "3:40", spotify_streams_approx: 345000000 }, "Reminder": { track_number: 4, duration: "3:38", spotify_streams_approx: 1396000000 }, "Rockin'": { track_number: 5, duration: "3:52", spotify_streams_approx: 285000000 }, "Secrets": { track_number: 6, duration: "4:25", spotify_streams_approx: 407000000 }, "True Colors": { track_number: 7, duration: "3:27", spotify_streams_approx: 331000000 }, "Stargirl Interlude": { track_number: 8, duration: "1:51", spotify_streams_approx: 1516000000 }, "Sidewalks": { track_number: 9, duration: "3:51", spotify_streams_approx: 472000000 }, "Six Feet Under": { track_number: 10, duration: "3:58", spotify_streams_approx: 341000000 }, "Love to Lay": { track_number: 11, duration: "3:43", spotify_streams_approx: 177000000 }, "A Lonely Night": { track_number: 12, duration: "3:40", spotify_streams_approx: 294000000 }, "Attention": { track_number: 13, duration: "3:23", spotify_streams_approx: 210000000 }, "Ordinary Life": { track_number: 14, duration: "3:41", spotify_streams_approx: 252000000 }, "Nothing Without You": { track_number: 15, duration: "3:18", spotify_streams_approx: 215000000 }, "All I Know": { track_number: 16, duration: "5:21", spotify_streams_approx: 191000000 }, "Die for You": { track_number: 17, duration: "4:01", spotify_streams_approx: 3161000000 }, "I Feel It Coming": { track_number: 18, duration: "4:29", spotify_streams_approx: 2152000000 } } },
+  "My Dear Melancholy,": { album_number: 7, release_date: "2018-03-30", type: "EP", tracks: { "Call Out My Name": { track_number: 1, duration: "3:48", spotify_streams_approx: 2350000000 }, "Try Me": { track_number: 2, duration: "3:34", spotify_streams_approx: 426000000 }, "Wasted Times": { track_number: 3, duration: "3:43", spotify_streams_approx: 381000000 }, "I Was Never There": { track_number: 4, duration: "4:02", spotify_streams_approx: 1421000000 }, "Hurt You": { track_number: 5, duration: "3:44", spotify_streams_approx: 386000000 }, "Privilege": { track_number: 6, duration: "2:52", spotify_streams_approx: 219000000 } } },
+  "After Hours": { album_number: 8, release_date: "2020-03-20", type: "Studio Album", tracks: { "Alone Again": { track_number: 1, duration: "4:10", spotify_streams_approx: 220000000 }, "Too Late": { track_number: 2, duration: "3:59", spotify_streams_approx: 217000000 }, "Hardest to Love": { track_number: 3, duration: "3:31", spotify_streams_approx: 224000000 }, "Scared to Live": { track_number: 4, duration: "3:11", spotify_streams_approx: 193000000 }, "Snowchild": { track_number: 5, duration: "4:07", spotify_streams_approx: 183000000 }, "Escape from LA": { track_number: 6, duration: "5:56", spotify_streams_approx: 221000000 }, "Heartless": { track_number: 7, duration: "3:18", spotify_streams_approx: 1205000000 }, "Faith": { track_number: 8, duration: "4:43", spotify_streams_approx: 241000000 }, "Blinding Lights": { track_number: 9, duration: "3:20", spotify_streams_approx: 5292000000 }, "In Your Eyes": { track_number: 10, duration: "3:57", spotify_streams_approx: 1105000000 }, "Save Your Tears": { track_number: 11, duration: "3:35", spotify_streams_approx: 2634000000 }, "Repeat After Me (Interlude)": { track_number: 12, duration: "3:15", spotify_streams_approx: 136000000 }, "After Hours": { track_number: 13, duration: "6:01", spotify_streams_approx: 1296000000 }, "Until I Bleed Out": { track_number: 14, duration: "3:10", spotify_streams_approx: 130000000 } } },
+  "Dawn FM": { album_number: 9, release_date: "2022-01-07", type: "Studio Album", tracks: { "Dawn FM": { track_number: 1, duration: "1:37", spotify_streams_approx: 80000000 }, "Gasoline": { track_number: 2, duration: "3:33", spotify_streams_approx: 190000000 }, "How Do I Make You Love Me?": { track_number: 3, duration: "3:34", spotify_streams_approx: 189000000 }, "Take My Breath": { track_number: 4, duration: "5:39", spotify_streams_approx: 258000000 }, "Sacrifice": { track_number: 5, duration: "3:09", spotify_streams_approx: 464000000 }, "A Tale by Quincy": { track_number: 6, duration: "1:32", spotify_streams_approx: 42000000 }, "Out of Time": { track_number: 7, duration: "3:34", spotify_streams_approx: 616000000 }, "Here We Go... Again": { track_number: 8, duration: "3:14", spotify_streams_approx: 124000000 }, "Best Friends": { track_number: 9, duration: "2:46", spotify_streams_approx: 149000000 }, "Is There Someone Else?": { track_number: 10, duration: "3:20", spotify_streams_approx: 1025000000 }, "Starry Eyes": { track_number: 11, duration: "3:28", spotify_streams_approx: 120000000 }, "Every Angel is Terrifying": { track_number: 12, duration: "2:11", spotify_streams_approx: 45000000 }, "Don't Break My Heart": { track_number: 13, duration: "3:32", spotify_streams_approx: 95000000 }, "I Heard You're Married": { track_number: 14, duration: "3:23", spotify_streams_approx: 121000000 }, "Less Than Zero": { track_number: 15, duration: "3:32", spotify_streams_approx: 401000000 }, "Phantom Regret by Jim": { track_number: 16, duration: "3:16", spotify_streams_approx: 50000000 } } },
+  "Hurry Up Tomorrow": { album_number: 10, release_date: "2025-01-31", type: "Studio Album", tracks: { "Wake Me Up": { track_number: 1, duration: "5:08", spotify_streams_approx: 85000000 }, "Cry for Me": { track_number: 2, duration: "3:44", spotify_streams_approx: 354000000 }, "I Can't Fucking Sing": { track_number: 3, duration: "0:12", spotify_streams_approx: 30000000 }, "São Paulo": { track_number: 4, duration: "5:01", spotify_streams_approx: 606000000 }, "Until We're Skin & Bones": { track_number: 5, duration: "0:22", spotify_streams_approx: 20000000 }, "Baptized in Fear": { track_number: 6, duration: "3:52", spotify_streams_approx: 130000000 }, "Open Hearts": { track_number: 7, duration: "3:54", spotify_streams_approx: 126000000 }, "Opening Night": { track_number: 8, duration: "1:36", spotify_streams_approx: 25000000 }, "Reflections Laughing": { track_number: 9, duration: "4:51", spotify_streams_approx: 50000000 }, "Enjoy the Show": { track_number: 10, duration: "5:01", spotify_streams_approx: 55000000 }, "Given Up on Me": { track_number: 11, duration: "5:54", spotify_streams_approx: 40000000 }, "I Can't Wait to Get There": { track_number: 12, duration: "3:08", spotify_streams_approx: 35000000 }, "Timeless": { track_number: 13, duration: "4:16", spotify_streams_approx: 1399000000 }, "Niagara Falls": { track_number: 14, duration: "4:37", spotify_streams_approx: 45000000 }, "Take Me Back to LA": { track_number: 15, duration: "4:13", spotify_streams_approx: 50000000 }, "Big Sleep": { track_number: 16, duration: "3:45", spotify_streams_approx: 35000000 }, "Give Me Mercy": { track_number: 17, duration: "3:36", spotify_streams_approx: 30000000 }, "Drive": { track_number: 18, duration: "3:08", spotify_streams_approx: 35000000 }, "The Abyss": { track_number: 19, duration: "4:42", spotify_streams_approx: 152000000 }, "Red Terror": { track_number: 20, duration: "3:51", spotify_streams_approx: 30000000 }, "Without a Warning": { track_number: 21, duration: "4:57", spotify_streams_approx: 35000000 }, "Hurry Up Tomorrow": { track_number: 22, duration: "4:51", spotify_streams_approx: 40000000 } } }
+};
+
+function formatStreams(n) {
+  if (n >= 1e9) return (n / 1e9).toFixed(2) + 'B';
+  if (n >= 1e6) return Math.round(n / 1e6) + 'M';
+  return n.toLocaleString();
+}
+
+let globalMax = 0;
+for (const album of Object.values(data)) {
+  for (const t of Object.values(album.tracks)) {
+    if (t.spotify_streams_approx > globalMax) globalMax = t.spotify_streams_approx;
+  }
+}
+
+const typeClass = { "Mixtape": "mixtape", "EP": "ep", "Studio Album": "studio" };
+const container = document.getElementById('albums');
+const sorted = Object.entries(data).sort((a, b) => a[1].album_number - b[1].album_number);
+
+for (const [name, album] of sorted) {
+  const tracksSorted = Object.entries(album.tracks).sort((a, b) => a[1].track_number - b[1].track_number);
+  const year = album.release_date.slice(0, 4);
+
+  const rows = tracksSorted.map(([title, t]) => {
+    const barWidth = Math.round((t.spotify_streams_approx / globalMax) * 80);
+    return `
+      <tr>
+        <td class="track-num">${t.track_number}</td>
+        <td class="track-name">${title}</td>
+        <td class="duration">${t.duration}</td>
+        <td class="streams">
+          <div class="streams-bar-wrap">
+            <span>${formatStreams(t.spotify_streams_approx)}</span>
+            <div class="streams-bar" style="width:${barWidth}px"></div>
+          </div>
+        </td>
+      </tr>`;
+  }).join('');
+
+  const card = document.createElement('div');
+  card.className = 'album-card';
+  card.innerHTML = `
+    <div class="album-header">
+      <img class="album-cover" src="${COVERS[name]}" alt="${name}">
+      <div class="album-header-text">
+        <div class="album-number">Album ${album.album_number}</div>
+        <div class="album-name">${name}</div>
+        <div class="album-meta">
+          <span class="badge ${typeClass[album.type] || ''}">${album.type}</span>
+          <span>${year}</span>
+          <span>${tracksSorted.length} tracks</span>
+        </div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Time</th>
+          <th style="text-align:right">Streams</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  container.appendChild(card);
+}
+</script>
+</body>
+</html>
