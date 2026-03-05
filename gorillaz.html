@@ -497,7 +497,7 @@ function scoreGuess(guess) {
 
   const trackDiff = Math.abs(guess.trackNumber - target.trackNumber);
   let trackResult;
-  if (guess.albumName === target.albumName && guess.trackNumber === target.trackNumber) trackResult = 'green';
+  if (guess.trackNumber === target.trackNumber) trackResult = 'green';
   else if (trackDiff <= 2) trackResult = 'yellow';
   else trackResult = 'red';
   const trackDir = guess.trackNumber < target.trackNumber ? '▲' : guess.trackNumber > target.trackNumber ? '▼' : '';

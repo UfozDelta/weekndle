@@ -572,7 +572,7 @@ function scoreGuess(guess) {
   // Track number (only compare if same album for green, otherwise diff)
   const trackDiff = Math.abs(guess.trackNumber - target.trackNumber);
   let trackResult;
-  if (guess.albumName === target.albumName && guess.trackNumber === target.trackNumber) {
+  if (guess.trackNumber === target.trackNumber) {
     trackResult = 'green';
   } else if (trackDiff <= 2) {
     trackResult = 'yellow';
